@@ -1,0 +1,502 @@
+--Flow:
+1. from
+2. where
+3. argegations - groupping, having
+4. select 
+5. order
+6. over
+7. distinct
+8. top
+9. insert, update, delete
+10. output - inserted and deleted virtual tables
+11. union
+
+FROM can use tables, subqueries, views, table-valued functions, data pull from other DB, pivot(create crosstab within FROM), XML, row constructors, inserted and deleted virtual tables
+
+NOT IN with NULL return False always because true/false AND NULL = NULL which in most cases equal to false. IN returs true because true OR null is true
+
+LIKE works as with % and _ as with regular expressions (LIKE '[d-f]%' - string begins from d,e,f)
+
+Don't use * in SELECT - it a waste of resources(in most cases u no need all data), u can't build covering index, if someone add new table it can brake an application.
+
+ORDER can work with column name and expression as well. If ORDER by string u may use COLLATION for set rules of ordering such as case sensitive or case insensitive.
+
+TOP() - select an indicated number of rows, TOP() PERCENT - select an indicated number % from table
+WITH TIES after TOP() select all connected rows (all same rows) always needs order by (and indicate row you need to select with ties)
+
+TOP(1)...ORDER BY NEWID() - to seect random row each time selected. NEWID() generate type uniqueidentifier(System-generated 16-byte value)
+
+--Data design patterns:
+1. One-to-many
+2. One-to-One (for example for security needs, clients separated from theirs Personal code)
+3. Many-to-Many (work with help of associative table - key from one and key from another, like clientid+contractid)
+4. Supertype\subtype (when supertype table use in other subtypes tables, which can have different meaning: use clientid either for customers table and organizations table)
+5. Domain integrity lookup pattern (when FK is key to sort of reference book to garantee range of valid data)
+6. Recursive (for example departments - FK = PK in the same table)
+7. Entity value pairs (EAV - entity-attribute-value, can be used where dinamic attributes need. Example - directories(?), where we use not atribute name but attributeid)
+
+--NEW Function SQL Server 2012:
+IIF(boolean_expression, true_value, false_value)
+CHOOSE(index, val_1, val_2 [, val_n])
+
+--NEW for me:
+ISNULL = nvl
+
+SELECT
+USER_NAME() AS 'User',
+SUSER_SNAME() AS 'Login',
+HOST_NAME() AS 'Workstation',
+APP_NAME() AS 'Application';
+
+SERVERPROPERTY()
+DB_NAME()
+
+--Works with DATE:
+
+SELECT
+GetDate() AS 'Current Server date and time 3ms',
+CURRENT_TIMESTAMP AS 'Current Server date and time not ANSI 3ms',
+GetUTCDate() AS 'Greenwhich current server date and time 3ms',
+SysDateTime() AS 'Current Server date and time 100ms',
+SysUTCDateTime() AS 'Greenwhich current server date and time 100ms',
+SYSDATETIMEOFFSET() AS 'Current computer date time and timezone offset'
+TODATETIMEOFFSET (expression,time_zone)   AS 'Datetime offset';
+
+DATEADD(date portion, number, date) - new date after adding number(DATEADD(month, 5, '01/01/2018') = 01/06/2018)
+DATEDIFF(date portion, start date, end date) - count of the date portion (DATEDIFF(year, '01/01/2018', '01/01/2022') = 4)
+DateName(date portion, date) - name of the portion (DATENAME(month, '01/01/2018') = January)
+DatePart(date portion, date) - return part of the date
+
+New in 2012
+EOMonth(start_date, month_to_add)  - return end day of month, as additional can add number of months
+DateFromParts(year, month, day) - return date by parameters()
+DateTime2FromParts(year, month, day, hour, minute, seconds, fractions, precision)
+DateTimeFromParts(year, month, day, hour, minute, seconds, milliseconds)
+DateTimeOffSetFromParts(year, month, day, hour, minute, seconds, fractions, hour_offset, minute_offset, precision)
+SmallDateTimeFromParts(year, month, day, hour, minute)
+
+--Work with STRING:
+
+SUBSTRING(string, starting position, length)
+STUFF(string, insertion position, delete count, string inserted) - insert one to another string with deleting number of symbols from this position
+CHARINDEX(search string, string where search, starting position) - return char poss from string for finded string, 3rd arg is optional.
+PATINDEX(pattern, string) - search pattern like regular expression (PATINDEX('%[cd]%', 'abdcdefg') = 3)
+RIGHT(string, count) and LEFT(string, count) - right or left part of string
+LEN(string)
+RTRIM(string) and LTRIM(string)
+UPPER(string) and LOWER(string)
+REPLACE(string, string)
+dbo.pTitleCase (string) - convert text to title (PATINDEX('%[cd]%', 'abdcdefg') = One Two Three)
+
+New in 2012
+CONCAT(var1, var2, ..., varn) - res as 'strin1 string2 ... string n' all var convert to string
+FORMAT() - return formatted value
+SOUNDEX(string) - calculate the Soundex code which replace similar sounded letter to number code(SOUNDEX('Andersen') = SOUNDEX(LastName) SOUNDEX value of A536 so Andersen, Anderson, and
+Atrim will be equal)
+DIFFERENCE(string) -  returns the Soundex difference between two strings in the form of a ranking from 1 to 4, with 4 representing a perfect
+
+--Works with convert
+
+CAST(123 AS NVARCHAR(5)) - to convert datatype (ANSI convert)
+CONVERT(datatype, expression, style) - convert datatype include thr optional formating(non-ANSI convert)
+STR(number, length, decimal) - returns string from a number
+Parse(string_value as data_type using culture) - error rised when can't parsed
+Try_Parse(string_value as data_type using culture) - return null if error, for both values can be parsed only into Numeric and Date/Time data types
+Try_Convert(data type, expression style) -the same as try_parsed but convert not only parse
+
+--CTE
+WITH name of query(column names)
+AS (subquery)
+
+CROSS APPLY = inner join + subquery
+OUTER APPLY = left join + subquery
+
+SELECT *
+FROM TableB AS B
+CROSS APPLY
+(Select ID from TableA
+where TableA.ID = B.ID) AS A...
+work for usind table functions connected with each row, when inner join condition are complicated
+
+--GROUPPING
+in group by all null values add in one group
+GROUPPING SETS(a.row1, b.row2) = select ... group by a.row1 union select ... group by b.row2
+
+OVER() is a Windowing - work with subset of data
+
+use after ORDER BY:
+OFFSET - how many rows scip before return result
+FETCH - haw many rows return:
+
+ORDER BY RowNumber
+OFFSET 20 ROWS
+FETCH NEXT 20 ROWS ONLY
+
+RANK() and DENSE_RANK() use for take a place for competiting rows DENSE_RANK no skip places (like same ROW_NUMBER for same rowset). For example 4 rows competit 1 - 2 and 3 - 4. RANK() return 1:1- 2:1 - 3:3 - 4:3, and DENSE_RANK() return 1:1 - 2:1 - 3:2 - 4:2
+
+NTILE(n) orginized(divide) rows into N number of groups, for example exam score NTILE(100) 
+
+RANGE and ROWS with or without BETWEEN and range of rows or just rows like CURRENT ROW, N FOLLOWING or N PRECEDING(only for ROWS) and UNBOUNDED FOLLOWING or UNBOUNDED PRECEDING. Using in OVER like SUM(amount) OVER(ORDER BY Id ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
+
+--Views
+ORDER BY aalowed in views with TOP() statements only
+
+Views are not updatable if they content agregations, subqueries with columns using in result; if try to update columns more than from one table
+
+If u upadte view use WITH CHECK OPTION after WHERE clause and when someone update or insert in view and its new row not agree with WHERE then it was error
+
+WITH SCHEMABINDING - if u try to change for example column name witch use in such kind of views u will get an error. Because if u can - view will be broken.
+
+WITH ENCRYPTION - encrypt view's query from systems views.
+
+--INSERT
+if u want insert into ID column(which autogenerates) u should use IBENTITY_INSERT mode:
+SET IDENTITY_INSERT dbo.Address ON
+INSERT INTO dbo.Address(AddressID, Address1, City, State, County,
+PostalCode)
+VALUES(999,'444 Our Way', 'Detroit', 'MI','Pike', '66666');
+SET IDENTITY_INSERT dbo.Address OFF
+
+Insert can be done into variable table:
+declare @address TABLE
+(
+ROWNAME_1 varchar(25) NOT NULL,
+...
+ROWNAME_N varchar(25) NOT NULL
+)
+insert into @address
+exec ListAZAddresses
+select * from @address
+
+If u want create new table and Insert:
+SELECT Columns
+INTO NewTable
+FROM DataSources
+[WHERE conditions]
+
+--UPDATE
+In MSSQL Alternative for 
+
+UPDATE Sales.Customer
+SET HasPurchased = 1
+FROM Sales.Customer c
+WHERE CustomerID IN (SELECT CustomerID FROM Sales.SalesOrderHeader)
+
+is
+
+UPDATE Sales.Customer
+SET HasPurchased = 1
+FROM Sales.Customer c
+INNER JOIN Sales.SalesOrderHeader soh
+ON c.CustomerID = soh.CustomerID
+
+--MERGE
+MERGE TargetTable
+USING SourceTable
+ON join conditions
+[WHEN Matched
+THEN DML]
+[WHEN NOT MATCHED BY TARGET
+THEN DML]
+[WHEN NOT MATCHED BY SOURCE
+THEN DML]
+
+--Return dates after manipulation
+INSERT INTO PersonList
+OUTPUT Inserted.*
+VALUES(77777, 'Jane', 'Doe');
+
+show all new or updating dates, for delete - old, deleted, for update - old and new (table DELETED and INSERTED)
+For MERGE also use $action, to identify whether the row was inserted,
+updated, or deleted in the end of query:
+OUTPUT
+deleted.FlightID, deleted.LastName, Deleted.Seat,
+$action,
+inserted.FlightID, inserted.LastName, inserted.Seat ;
+Can be used for inserting in new table: OUTPUT.... INTO
+
+--HIERARCHY
+HIERARCHYID - system datatype hex-formated for store node in the hiererchy.
+GetRoot() method for get first node in the hierarchy - root node.
+ToString() show hex in string form: 0x = /
+For INSERT new node use GetDescendant(child1,child2) where params indicate between which nodes need to place new one.  
+GetAncestor(level) to get ancestor hierachyid, where level - is ancestor's level. If 1 - it's mean to take first from you.
+IsDescendantOf(parent) boolean fuction to check if node attached(belonged) to parent. For the same level or level lower.
+GetLevel() get a level of node in int value from 0.
+
+Indexes types for hierarchyid type's column - DEPTH-FIRST index when employee records stored together with their managers' records or "Find all files in this folder and its subfolders" (for /1/ its /1/1/, /1/1/1/, /1/2/, /1/2/1...). BREADTH-FIRST when stored together each level of hierarchy - "Find all employees who report directly to this manager" (for /1/ its /1/1/, /1/2/...).
+
+--RECURSIVE CTE 
+
+    WITH <Name>[(<list of columns>)]
+    AS(
+    < SELECT... >
+    UNION ALL -- recursive part
+    < SELECT...FROM <Name>… > 
+    WHERE <iterations' conditions>
+    )
+	
+--XML
+XML is database type. It can be connected with XSD (typing) and not connected (untyping). If it is typing than before insert XML is checked by XSD.
+To work with XML:
+1. Create an XSD scheme as DB object: CREATE XML SCHEMA COLLECTION <Name of XSD Object> AS N'<XSD text>';
+2. Apply XSD to column: ALTER COLUMN <ColumnName> xml (<Name of XSD Object>), also applying coul be done on stage of declaring: DECLARE @var xml (<Name of XSD Object>)
+
+XPath - language used to create expressions that can address parts of an XML document:
+value() - get value from XML:
+
+DECLARE @var xml
+SET @var = '<Order OrderID="1">
+<Item>
+<ItemNumber>V001</ItemNumber>
+<Quantity>1</Quantity>
+<Price>299.99</Price>
+</Item>
+</Order>'
+SELECT @var.value('(Order/@OrderID)[1]', 'INT') as orderid,
+@var.value('(Order/Item/ItemNumber)[1]', 'NVARCHAR(50)') as itemnumber
+
+nodes() - return rowset representation of the XML:
+
+SELECT OrderID,
+ItemData.value('(Order/Item/ItemNumber)[1]', 'NVARCHAR(50)') as itemnumber
+FROM ItemInfo
+CROSS APPLY ItemData.nodes('/Order/Item') o(x)
+
+o - name of new table, x - name of new column and use for work with results.
+
+exist() - check if elemrnt is exists in XML(if it is than returns 1):
+
+SELECT OrderID,
+ItemData.value('(Order/Item/ItemNumber)[1]', 'NVARCHAR(50)') as itemnumber
+FROM ItemInfo
+CROSS APPLY ItemData.nodes('/Order/Item') o(x)
+
+query()
+
+modify()
+
+If we want to convert query result into XML we use FOR XML:
+AUTO - auto converting to XML with using column and table names(or alias).
+RAW - instead of names or alias use words root, row if not specified, for example FOR XML RAW('Order')
+PATH - more complicated and powerful directive for multilevel hierarchy:
+
+SELECT
+o.OrderNumber AS '@OrderNumber',
+c.Name AS 'Customer/@Name',
+i.ItemNumber AS 'LineItems/Item/@ItemNo',
+od.Quantity AS 'LineItems/Item/@Qty'
+FROM Orders o
+INNER JOIN Customer c on o.customerID = c.customerid
+INNER JOIN OrderDetail od on od.OrderID = o.OrderID
+INNER JOIN Item i on i.ItemID = od.ItemID
+FOR XML PATH('Order')
+
+Also every of directives use ROOT('<name of root tag>') - adding root element, and ELEMENTS - convert attributes <table tag = "value" > to <table><tag>value</tag></table>
+
+--Work with external sources(Executing Distributed Queries)
+REREAD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+--T-SQL
+
+GO is a signal the end of the batch. GO after USE needa in case of for example CREATE command and other commands whixh need to be first in batch.
+@Var - is variable local, @@Var - is global
+The most commonly used global variables are @@NestLevel, @@Rowcount, @@ServerName, and @@Version
+SET @Var is how we assigned value to variable. Other way to assigned value is in SELECT @Var = value
+SELECT @Variable = expression WHERE BooleanExpression - in this case WhERE clause work as IF and if boolean condition is true than SELECT set the variable in other case is not.
+
+IF Condition
+Begin;
+Multiple lines;
+End;
+Else
+Begin;
+Multiple lines;
+End;
+
+WHILE Condition
+BEGIN;
+Multiple lines;
+END;
+Also can use BREAK - close the loop and CONTINUE - swith to new iteration.
+
+Sp_help, and its variations, return information regarding the server, database, objects,
+connections, and more. 
+
+--Temporary tables and variables
+
+CREATE TABLE #ProductTemp (
+ProductID INT PRIMARY KEY
+);
+
+#TableName is local table for session, user, function or procedure ##TableName is global temporary table can use from different session. TEmporary tables create in tempdb.
+
+Table variable is like local variable:
+DECLARE @WorkTable TABLE (
+PK INT PRIMARY KEY,
+Col1 INT NOT NULL);
+
+NO: FK, triggers
+YES: PK, DEFAULT, NULL, Check constraints
+
+If table contant less than 250 rows - use table var.
+
+--NEW in 2012
+
+SELECT *
+FROM sys.dm_exec_describe_first_result_set
+(N'TSQL', N'Parameters', 0); - use for get metadata for SQL or procedure
+
+sp_describe_undeclared_parameters N'TSQL'; - use for get list of undeclared vars
+
+--ERROR HANDLING
+
+@@error - system function contains integer error code. How can get error message:
+DECLARE @ErrorNumber nvarchar(1000);
+...
+SET @ErrorNumber = @@Error
+Error global var containt only last error code.
+
+@@rowcount - count of rows which affected after last query
+
+RAISERROR (
+message or number, severity, state, optional arguments
+) WITH LOG; - specify severity level, dinamically set error msg, optionally log error to the event log(for Win) 
+Error messages can be stored in sys.messages:
+EXEC sp_addmessage 50001, 16, 'Unable to update %s';
+if it need to be replaced use ,@replace = 'replace'; in the end.
+
+TRY...CATCH:
+
+BEGIN TRY
+<SQL code>;
+END TRY
+BEGIN CATCH
+<error handling code>;
+END CATCH;
+
+between END TRY and BEGIN CATCH may not be any ; because it single logical structure. In CATCH block we can use RAISERROR with several catch functions such as Error_Message(), Error_Number() and others.
+Also can be used THROW (it is like RAISERROR with severity 16 always).
+
+--BULK OPERATION
+REREAD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+--Stored procedure
+
+CREATE PROCEDURE <ProcedureName> [<list of @vars>] [OUT]
+[WITH ENCRYPTION]
+AS
+;
+
+EXEC <ProcedureName> <list of @vars or values or @var=value> [DEFAULT]- EXEC if it is not first command in batch in other case we can use simple <ProcedureName>
+
+Procedure can provide a Table as an Input Parameter:
+1. Defined table type in DB
+2. Create a table-valued parameter
+3. When use in proc use READONLY for type:
+
+CREATE TYPE CurrencyCodeListType as TABLE
+(
+FromCurrencyCode char(3)
+,ToCurrencyCode char(3)
+);
+
+CREATE PROCEDURE Sales.uspGetCurrencyRatesUDT
+@CurrencyCodeTable as CurrencyCodeListType READONLY
+AS
+SELECT cr.CurrencyRateID, cr.FromCurrencyCode,
+cr.ToCurrencyCode, cr.AverageRate,
+cr.EndOfDayRate, cr.CurrencyRateDate
+FROM Sales.CurrencyRate cr
+JOIN @CurrencyCodeTable tvp
+ON cr.FromCurrencyCode = tvp.FromCurrencyCode;
+
+DECLARE @CurrencyCodeTVP as CurrencyCodeListType
+INSERT INTO @CurrencyCodeTVP(FromCurrencyCode, ToCurrencyCode)
+VALUES
+('USD', 'AUD'),
+('USD', 'GBP'),
+('USD', 'CAD'),
+('USD', 'MXN');
+EXECUTE Sales.uspGetCurrencyRatesUDT
+@CurrencyCodeTable = @CurrencyCodeTVP;
+
+Ways to return data from stored proc:
+OUR parameters;
+RETURN statement;
+RAISEERROR or THROW;
+Table result from SELECT;
+
+EXECUTE @ReturnCode = Sales.uspGetCurrencyName
+@CurrencyCode = 'USD',
+@CurrencyName = @CurrencyNameOutput OUTPUT;
+
+We can execute - WITH RESULT SETS:
+ 
+--Execute the stored procedure
+EXECUTE Sales.uspGetCurrencyInfoAndDetail
+@CurrencyCode = 'USD',
+@CurrencyRateDate = '2007-07-14'
+WITH RESULT SETS
+(
+( [Currency Code] char(3)
+,[Currency Name] varchar(50)
+)
+, -- Separate each defined result set with a comma
+( [From Currency] char(3)
+,[To Currency] char(3)
+,[Average Rate] numeric(7,4)
+,[End of Day Rate] numeric(7,4)
+,[Currency As-Of Date] date
+)
+);
+
+WITH RESULT SETS enables the EXECUTE statement to define column names and data types. All columns returned by the stored procedure must be defined in the WITH RESULT SETS definition, and assigned data types must be compatible with the data types of the returned columns.
+
+INSERT…EXECUTE use for insert data from proc directly into table:
+INSERT Sales.NewCurrency(CurrencyCode, Name)
+EXECUTE Sales.uspInsertNewCurrency @CurrencyCode = 'CAD';
+
+--UDF - User defined functions
+It can be scalar function, table-valued function, multy-statment table-valued function. Differences from procedures:
+- Functions executes not in Execute, but everywhere where we waiting return value
+- Default parameters are not optional and always need to be called (if with default value than call with keyword DEFAULT)
+- Fuctions can use WITH SCHEMA BINDING:
+CREATE FUNCTION FunctionName (Input Parameters)
+RETURNS DataType
+WITH SCHEMA BINDING
+AS
+BEGIN;
+Code;
+RETURNS Expression;
+END;
+Schema binding not only alerts the developer that the change may affect an object, it also prevents the change. It means you cann't alter a table connected with function(like a view).
+
+1. A scalar function is one that returns a single, specific value:
+
+CREATE FUNCTION FunctionName (InputParameters)
+RETURNS DataType
+AS
+BEGIN;
+Code;
+RETURN Expression;
+END;
+
+2. The inline table-valued function, is similar to a view. Both are wrapped for a stored SELECT statement. An inline table-valued user-defined function retains the benefits of a view, and adds parameters. As with a view, if the SELECT statement is updatable, then the function is also updatable:
+
+CREATE FUNCTION FunctionName (InputParameters)
+RETURNS Table
+AS
+RETURN (Select Statement);
+
+The scalar function fires once per row, whereas the inline table valued function is treated by the query optimizer much like a view. There is a growing school of thought that because of this treatment by the query optimizer, it is highly preferable to use inline table-valued functions instead of scalar functions wherever possible.
+
+3. The multistatement table-valued, user-defined function combines the scalar function’s capability to contain complex code with the inline table-valued function’s capability to return a result set. This type of function creates a table variable and then populates it within code. 
+
+CREATE FUNCTION FunctionName (InputParamenters)
+RETURNS @TableName TABLE (Columns)
+AS
+BEGIN;
+Code to populate table variable
+RETURN;
+END;
