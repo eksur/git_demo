@@ -1,0 +1,770 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2020 4:43:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPBYMINW7640"
+  DTS:CreatorName="MINSK\Tatsiana_Verashchaka"
+  DTS:DTSID="{81188BF5-8198-43C8-B024-394591AE7B7F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DWH_Load_FactPopulation"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{9A362260-256D-45FD-B2D7-70187DBC4803}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Load FactPopulation"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{74957AB3-5B33-4750-A116-4736570FFF19}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Load FactPopulation">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{46DA03DE-9FCA-4334-B428-21253838215B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load FactPopulation"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DC IF Unknown"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Inputs[Derived Column Input].Columns[DimCountryKey]"
+                          cachedDataType="i4"
+                          cachedName="DimCountryKey"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output].Columns[DimCountryKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Output].Columns[DC_DimCountryKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Output].Columns[DC_DimCountryKey]"
+                          name="DC_DimCountryKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output].Columns[DimCountryKey]}) ? -1 : #{Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output].Columns[DimCountryKey]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(DimCountryKey) ? -1 : DimCountryKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [DimCountryKey], [CountryISOCode]
+  FROM [dwh].[DimCountry]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [DimCountryKey], [CountryISOCode]
+  FROM [dwh].[DimCountry]) [refTable]
+where [refTable].[CountryISOCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DimCountryKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryISOCode" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[CountryCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CountryCode"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[CountryCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CountryISOCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output].Columns[DimCountryKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output].Columns[DimCountryKey]"
+                          name="DimCountryKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DimCountryKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dwh].[FactPopulation]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StatYear]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="StatYear"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateStat]"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[StatYear]" />
+                        <inputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DC_DimCountryKey]"
+                          cachedDataType="i4"
+                          cachedName="DC_DimCountryKey"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Output].Columns[DC_DimCountryKey]" />
+                        <inputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Info]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Info"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PopulationRange]"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[Info]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="i4"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateStat]"
+                          dataType="wstr"
+                          length="255"
+                          name="DateStat" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PopulationRange]"
+                          dataType="i8"
+                          name="PopulationRange" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPopulationKey]"
+                          dataType="i4"
+                          name="FactPopulationKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLESRC Population_unpivoted"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select CountryCode, CAST(StatYear AS NVARCHAR(20))+'01'+'01' StatYear, Info
+from(
+SELECT [Country Code] CountryCode, [1960],[1961],[1962],[1963],[1964],[1965],[1966],[1967],[1968],[1969],[1970],[1971],[1972],[1973],[1974],[1975],[1976],[1977],[1978],[1979],[1980],[1981],[1982],[1983],[1984],[1985],[1986],[1987],[1988],[1989],[1990],[1991],[1992],[1993],[1994],[1995],[1996],[1997],[1998],[1999],[2000],[2001],[2002],[2003],[2004],[2005],[2006],[2007],[2008],[2009],[2010],[2011],[2012],[2013],[2014],[2015],[2016],[2017],[2018],[2019]
+  FROM [staging].[WorldBankPopulation_untyped]) m
+UNPIVOT(
+Info
+FOR StatYear IN ([1960],[1961],[1962],[1963],[1964],[1965],[1966],[1967],[1968],[1969],[1970],[1971],[1972],[1973],[1974],[1975],[1976],[1977],[1978],[1979],[1980],[1981],[1982],[1983],[1984],[1985],[1986],[1987],[1988],[1989],[1990],[1991],[1992],[1993],[1994],[1995],[1996],[1997],[1998],[1999],[2000],[2001],[2002],[2003],[2004],[2005],[2006],[2007],[2008],[2009],[2010],[2011],[2012],[2013],[2014],[2015],[2016],[2017],[2018],[2019])
+) unpvt</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[CountryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[CountryCode]"
+                          length="255"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[CountryCode]"
+                          name="CountryCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[StatYear]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[StatYear]"
+                          length="24"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[StatYear]"
+                          name="StatYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[Info]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[Info]"
+                          length="255"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].Columns[Info]"
+                          name="Info"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[StatYear]"
+                          dataType="wstr"
+                          length="24"
+                          name="StatYear" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output].ExternalColumns[Info]"
+                          dataType="wstr"
+                          length="255"
+                          name="Info" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[CountryCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[CountryCode]"
+                          name="CountryCode" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[StatYear]"
+                          dataType="wstr"
+                          length="24"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[StatYear]"
+                          name="StatYear" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[Info]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[Info]"
+                          name="Info" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[Derived Column Output]"
+                  endId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[Lookup Match Output]"
+                  endId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation"
+          TopLeft="153,39" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="532,178"
+          Size="532,221"
+          Id="Package\SEQC Load FactPopulation"
+          TopLeft="285,162" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC Load FactPopulation\DFT Load FactPopulation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="113,42"
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup"
+          TopLeft="523,156" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted"
+          TopLeft="472,56" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation\DC IF Unknown"
+          TopLeft="503,256" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination"
+          TopLeft="499,357" />
+        <EdgeLayout
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[OLE DB Source Output]"
+          TopLeft="581.25,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[Lookup Match Output]"
+          TopLeft="579.5,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Load FactPopulation\DFT Load FactPopulation.Paths[Derived Column Output]"
+          TopLeft="582,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load FactPopulation\DFT Load FactPopulation\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLESRC Population_unpivoted">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load FactPopulation\DFT Load FactPopulation\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1127 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2020 1:20:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPBYMINW7640"
+  DTS:CreatorName="MINSK\Tatsiana_Verashchaka"
+  DTS:DTSID="{B10118D5-2E99-4DA6-979F-36399D60CE74}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DWH_Load_DimCountries"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{3DDB14AC-7C5A-4A9E-BF75-8DCD21BA56DE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC DimCrimeType load"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6EB3C68C-36C9-4EDD-A0B1-E7FCFAFD0F1F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC DimCrimeType load">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9FCE720D-BB3F-432C-B9B0-C6897B1CA817}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load Load DimCountries"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input].Columns[CountryISOCodeDST]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="CountryISOCodeDST"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[NewCountry]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="NewCountry"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">[ISNULL](#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(CountryISOCodeDST)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+                  name="Merge Join"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of join to perform."
+                      name="JoinType"
+                      typeConverter="JoinType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of columns in the ordering key."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the null values are treated as equal values."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates the requested maximum buffers per input before blocking."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Left Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CountryISOCode"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[Country]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Country"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[Region]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Region"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[SubRegion]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SubRegion"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Right Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Right Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Right Input].Columns[CountryISOCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="CountryISOCode"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output]"
+                      isSorted="true"
+                      name="Merge Join Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]"
+                          name="CountryISOCodeSRC"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]"
+                          name="CountryISOCodeDST">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Right Input].Columns[CountryISOCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountrySRC]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountrySRC]"
+                          name="CountrySRC">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[Country]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[RegionSRC]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[RegionSRC]"
+                          name="RegionSRC">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[Region]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[SubRegionSRC]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[SubRegionSRC]"
+                          name="SubRegionSRC">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input].Columns[SubRegion]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLEDST DimCrimeType"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dwh].[DimCountry]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].Columns[CountryISOCodeSRC]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CountryISOCodeSRC"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[CountryISOCode]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].Columns[CountrySRC]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CountrySRC"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[CountrySRC]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].Columns[RegionSRC]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="RegionSRC"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[RegionSRC]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].Columns[SubRegionSRC]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="SubRegionSRC"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[SubRegion]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output].Columns[SubRegionSRC]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryKey]"
+                          dataType="i4"
+                          name="DimCountryKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                          dataType="wstr"
+                          length="255"
+                          name="Region" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[SubRegion]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubRegion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="255"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[CountryISOCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="CountryISOCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLEDST DinCountry"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [DimCountryKey]
+      ,[Region]
+      ,[SubRegion]
+      ,[Country]
+      ,[CountryISOCode]
+  FROM [dwh].[DimCountry]
+ORDER BY CountryISOCode</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output]"
+                      isSorted="true"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[DimCountryKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[DimCountryKey]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[DimCountryKey]"
+                          name="DimCountryKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[Region]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[Region]"
+                          name="Region"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[SubRegion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[SubRegion]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[SubRegion]"
+                          name="SubRegion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[Country]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[Country]"
+                          name="Country"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[CountryISOCode]"
+                          length="5"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
+                          name="CountryISOCode"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[DimCountryKey]"
+                          dataType="i4"
+                          name="DimCountryKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                          dataType="wstr"
+                          length="255"
+                          name="Region" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[SubRegion]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubRegion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="255"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output].ExternalColumns[CountryISOCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="CountryISOCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[DimCountryKey]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[DimCountryKey]"
+                          name="DimCountryKey" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[Region]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[Region]"
+                          name="Region" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[SubRegion]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[SubRegion]"
+                          name="SubRegion" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          name="Country" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[CountryISOCode]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[CountryISOCode]"
+                          name="CountryISOCode" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLESRC staging Countries"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [name] Country
+      ,[alpha3] CountryISOCode
+      ,[region] Region
+      ,[subregion] SubRegion
+  FROM [staging].[Countries_typed]
+ORDER BY [alpha3]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output]"
+                      isSorted="true"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]"
+                          name="Country"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[CountryISOCode]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
+                          name="CountryISOCode"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]"
+                          name="Region"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[SubRegion]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]"
+                          name="SubRegion"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="255"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[CountryISOCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="CountryISOCode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                          dataType="wstr"
+                          length="255"
+                          name="Region" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output].ExternalColumns[SubRegion]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubRegion" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          name="Country" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[CountryISOCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[CountryISOCode]"
+                          name="CountryISOCode" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[Region]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[Region]"
+                          name="Region" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[SubRegion]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[SubRegion]"
+                          name="SubRegion" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[Merge Join Output]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Merge Join Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[NewCountry]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]"
+                  name="NewCountry"
+                  startId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split.Outputs[NewCountry]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Left Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[OLE DB Source Output1]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join.Inputs[Merge Join Right Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC DimCrimeType load\SQL Dummy rows"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A08AB4F9-73AE-4B36-A315-5D16B26DA991}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Dummy rows"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT&#xA;&#x9;&#x9;1&#xA;&#x9;FROM dwh.DimCountry d&#xA;&#x9;WHERE DimCountryKey = -1)&#xA;BEGIN&#xA;SET IDENTITY_INSERT dwh.DimCountry ON&#xA;INSERT INTO dwh.DimCountry (DimCountryKey,&#xA;Region,&#xA;SubREgion,&#xA;Country,&#xA;CountryISOCode)&#xA;&#x9;VALUES (-1, 'Unknown', 'Unknown', 'Unknown', 'UN')&#xA;SET IDENTITY_INSERT dwh.DimCountry OFF&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC DimCrimeType load.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{05563402-7EDD-46C5-A26F-8E311EA98FFB}"
+          DTS:From="Package\SEQC DimCrimeType load\DFT Load Load DimCountries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC DimCrimeType load\SQL Dummy rows" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries"
+          TopLeft="154,28" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\SEQC DimCrimeType load\SQL Dummy rows"
+          TopLeft="177,118" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load.PrecedenceConstraints[Constraint]"
+          TopLeft="260.25,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="525,215"
+          Size="525,258"
+          Id="Package\SEQC DimCrimeType load"
+          TopLeft="118,126" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load Load DimCountries">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Merge Join"
+          TopLeft="389,284" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry"
+          TopLeft="499,19" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries"
+          TopLeft="159,30" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType"
+          TopLeft="347,529" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\Conditional Split"
+          TopLeft="367,442" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[OLE DB Source Output1]"
+          TopLeft="585.5,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.166666666667,223"
+              Start="0,0"
+              End="-111.166666666667,215.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,128.173252279635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,128.173252279635"
+                    Point2="0,132.173252279635"
+                    Point3="-4,132.173252279635" />
+                  <mssgle:LineSegment
+                    End="-107.166666666667,132.173252279635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.166666666667,132.173252279635"
+                    Point2="-111.166666666667,132.173252279635"
+                    Point3="-111.166666666667,136.173252279635" />
+                  <mssgle:LineSegment
+                    End="-111.166666666667,215.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.0369270833335,137.173252279635,30.9071875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[OLE DB Source Output]"
+          TopLeft="260,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="194,212"
+              Start="0,0"
+              End="194,204.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,102"
+                    Point2="0,106"
+                    Point3="4,106" />
+                  <mssgle:LineSegment
+                    End="190,106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="190,106"
+                    Point2="194,106"
+                    Point3="194,110" />
+                  <mssgle:LineSegment
+                    End="194,204.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="81.54640625,111,30.9071875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[NewCountry]"
+          TopLeft="443.25,484">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.55193359375,13.04296875,94.8934765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load Load DimCountries.Paths[Merge Join Output]"
+          TopLeft="454,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,116"
+              Start="0,0"
+              End="-9.5,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54"
+                    Point2="0,58"
+                    Point3="-4,58" />
+                  <mssgle:LineSegment
+                    End="-5.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,58"
+                    Point2="-9.5,58"
+                    Point3="-9.5,62" />
+                  <mssgle:LineSegment
+                    End="-9.5,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.20359375,63,30.9071875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLESRC staging Countries">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DinCountry">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load Load DimCountries\OLEDST DimCrimeType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

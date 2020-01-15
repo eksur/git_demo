@@ -1,0 +1,1141 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2020 1:20:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPBYMINW7640"
+  DTS:CreatorName="MINSK\Tatsiana_Verashchaka"
+  DTS:DTSID="{50DBD9EB-264C-40E8-97B1-9642695C6BD3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DWH_Load_DimCrimeType"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{DA3D102C-64F8-4853-B545-9FAA823B2FA6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC DimCrimeType load"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B73FA5E3-67E3-4A64-BA06-267586D81C43}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC DimCrimeType load">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4FE5B620-EA9E-4F6F-ADDD-7B514AF14DEE}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load DimCrimeType"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input].Columns[CrimeTypeNameSRC]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="CrimeTypeNameSRC"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameSRC]" />
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input].Columns[CrimeTypeNameDST]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CrimeTypeNameDST"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameDST]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[DeletedFromSource]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="DeletedFromSource"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">[ISNULL](#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameSRC]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(CrimeTypeNameSRC)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[NewCrimeType]"
+                      description="Output 2 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="NewCrimeType"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">[ISNULL](#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameDST]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(CrimeTypeNameDST)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+                  name="Merge Join"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of join to perform."
+                      name="JoinType"
+                      typeConverter="JoinType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of columns in the ordering key."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the null values are treated as equal values."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates the requested maximum buffers per input before blocking."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Left Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Left Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Left Input].Columns[CrimeTypeName]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="CrimeTypeName"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Right Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input].Columns[CrimeTypeName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CrimeTypeName"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output]"
+                      isSorted="true"
+                      name="Merge Join Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameSRC]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameSRC]"
+                          name="CrimeTypeNameSRC"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Left Input].Columns[CrimeTypeName]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameDST]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameDST]"
+                          name="CrimeTypeNameDST">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input].Columns[CrimeTypeName]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLEDST DimCrimeType"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dwh].[DimCrimeType]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].Columns[CrimeTypeNameSRC]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="CrimeTypeNameSRC"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[CrimeTypeName]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output].Columns[CrimeTypeNameSRC]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[DimCrimeTypeKey]"
+                          dataType="i4"
+                          name="DimCrimeTypeKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input].ExternalColumns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          name="CrimeTypeName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLEDST DinCrimeType"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT d.DimCrimeTypeKey, d.CrimeTypeName
+	FROM dwh.DimCrimeType d
+	WHERE d.DimCrimeTypeKey &gt; -1</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].ExternalColumns[DimCrimeTypeKey]"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]"
+                          name="DimCrimeTypeKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].ExternalColumns[CrimeTypeName]"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].ExternalColumns[DimCrimeTypeKey]"
+                          dataType="i4"
+                          name="DimCrimeTypeKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].ExternalColumns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          name="CrimeTypeName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[DimCrimeTypeKey]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[DimCrimeTypeKey]"
+                          name="DimCrimeTypeKey" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLESRC staging UNCrime"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT REPLACE(REPLACE(REPLACE([FileName],SUBSTRING(FileName,1,CHARINDEX('csv\', FileName)+3),''),'.csv',''),'_',' ') CrimeTypeName
+ FROM [staging].[UNCrime_typed]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].ExternalColumns[CrimeTypeName]"
+                          length="4000"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].ExternalColumns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="4000"
+                          name="CrimeTypeName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort DST CrimeType"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Inputs[Sort Input].Columns[DimCrimeTypeKey]"
+                          cachedDataType="i4"
+                          cachedName="DimCrimeTypeKey"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Inputs[Sort Input].Columns[CrimeTypeName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CrimeTypeName"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output].Columns[DimCrimeTypeKey]"
+                          dataType="i4"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output].Columns[DimCrimeTypeKey]"
+                          name="DimCrimeTypeKey">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort SRC CrimeType"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Inputs[Sort Input].Columns[CrimeTypeName]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="CrimeTypeName"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].Columns[CrimeTypeName]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
+                          name="CrimeTypeName"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output].Columns[CrimeTypeName]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Merge Join Output]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Merge Join Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[NewCrimeType]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType.Inputs[OLE DB Destination Input]"
+                  name="NewCrimeType"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split.Outputs[NewCrimeType]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output1]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output]" />
+                <path
+                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output1]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType.Outputs[Sort Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC DimCrimeType load\SQL Dummy rows"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B2F791E6-00D4-4E30-AB82-2D828BD3FDC2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Dummy rows"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT&#xA;&#x9;&#x9;1&#xA;&#x9;FROM dwh.DimCrimeType d&#xA;&#x9;WHERE d.DimCrimeTypeKey = -1)&#xA;BEGIN&#xA;SET IDENTITY_INSERT dwh.DimCrimeType ON&#xA;INSERT INTO dwh.DimCrimeType(DimCrimeTypeKey, CrimeTypeName)&#xA;&#x9;VALUES (-1, 'Unknown')&#xA;SET IDENTITY_INSERT dwh.DimCrimeType OFF&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC DimCrimeType load.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D852285A-A865-470B-9483-36B51D81B074}"
+          DTS:From="Package\SEQC DimCrimeType load\DFT Load DimCrimeType"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC DimCrimeType load\SQL Dummy rows" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType"
+          TopLeft="167,29" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\SEQC DimCrimeType load\SQL Dummy rows"
+          TopLeft="177,118" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load.PrecedenceConstraints[Constraint]"
+          TopLeft="261.75,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="525,215"
+          Size="525,258"
+          Id="Package\SEQC DimCrimeType load"
+          TopLeft="118,126" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime"
+          TopLeft="159,30" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType"
+          TopLeft="499,19" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort DST CrimeType"
+          TopLeft="511,206" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output]"
+          TopLeft="595.5,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,145"
+              Start="0,0"
+              End="0,137.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,137.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split"
+          TopLeft="367,442" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType"
+          TopLeft="347,522" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[NewCrimeType]"
+          TopLeft="443.25,484">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.76134765625,9.54296875,67.5226953125,11.4140625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType"
+          TopLeft="167,199" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output1]"
+          TopLeft="256.25,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127"
+              Start="0,0"
+              End="0,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join"
+          TopLeft="385,342" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output]"
+          TopLeft="254,241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.666666666667,101"
+              Start="0,0"
+              End="175.666666666667,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.8632218844985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.8632218844985"
+                    Point2="0,59.8632218844985"
+                    Point3="4,59.8632218844985" />
+                  <mssgle:LineSegment
+                    End="171.666666666667,59.8632218844985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.666666666667,59.8632218844985"
+                    Point2="175.666666666667,59.8632218844985"
+                    Point3="175.666666666667,63.8632218844985" />
+                  <mssgle:LineSegment
+                    End="175.666666666667,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output1]"
+          TopLeft="598.5,248">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-128.166666666667,94"
+              Start="0,0"
+              End="-128.166666666667,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.7142857142857"
+                    Point2="0,55.7142857142857"
+                    Point3="-4,55.7142857142857" />
+                  <mssgle:LineSegment
+                    End="-124.166666666667,55.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-124.166666666667,55.7142857142857"
+                    Point2="-128.166666666667,55.7142857142857"
+                    Point3="-128.166666666667,59.7142857142857" />
+                  <mssgle:LineSegment
+                    End="-128.166666666667,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Merge Join Output]"
+          TopLeft="447.25,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DinCrimeType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,762 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/27/2019 3:59:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPBYMINW7640"
+  DTS:CreatorName="MINSK\Tatsiana_Verashchaka"
+  DTS:DTSID="{FD07009B-C596-4DEB-BCEB-47CBB32D9A8E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Staging_Transform_Countries"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B060EBF3-32D2-4304-A153-4A0F7C8B9F5F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Load data to staging"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{fafbc2ac-7c77-4c53-8db1-327a5429ebb1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Load data to staging">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7fdecb8f-16ad-4fce-928f-ba12b9bb4158}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load from File to WorldBankPopulation_typed"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLEDB from Countries_untyped"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT IIF(LEN([mn].[name])&gt;0, [mn].[name],NULL) [name]
+,IIF(LEN([mn].[alpha2])&gt;0, [mn].[alpha2],NULL) [alpha2]
+,IIF(LEN([mn].[alpha3])&gt;0, [mn].[alpha3],NULL) [alpha3]
+,IIF(LEN([mn].[countrycode])&gt;0, [mn].[countrycode],NULL) [countrycode]
+,IIF(LEN([mn].[iso])&gt;0, [mn].[iso],NULL) [iso]
+,IIF(LEN([mn].[region])&gt;0, [mn].[region],NULL) [region]
+,IIF(LEN([mn].[subregion])&gt;0, [mn].[subregion],NULL) [subregion]
+,IIF(LEN([mn].[intermediateregion])&gt;0, [mn].[intermediateregion],NULL) [intermediateregion]
+,IIF(LEN([mn].[regioncode])&gt;0, [mn].[regioncode],NULL) [regioncode]
+,IIF(LEN([mn].[intermediateregioncode])&gt;0, [mn].[intermediateregioncode],NULL) [intermediateregioncode]
+FROM(
+SELECT REPLACE([name], '"','') AS [name]
+      ,REPLACE([alpha2], '"','') AS [alpha2]
+      ,REPLACE([alpha3], '"','') AS [alpha3]
+      ,REPLACE([countrycode], '"','') AS [countrycode]
+      ,REPLACE([iso], '"','') AS [iso]
+      ,REPLACE([region], '"','') AS [region]
+      ,REPLACE([subregion], '"','') AS [subregion]
+      ,REPLACE([intermediateregion], '"','') AS [intermediateregion]
+      ,REPLACE([regioncode], '"','') AS [regioncode]
+      ,REPLACE([subregioncode], '"','') AS [subregioncode]
+      ,REPLACE([intermediateregioncode], '"','') AS [intermediateregioncode]
+  FROM [staging].[Countries_untyped]) mn</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[name]"
+                          name="name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[alpha2]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha2]"
+                          name="alpha2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[alpha3]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha3]"
+                          name="alpha3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[countrycode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[countrycode]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[countrycode]"
+                          name="countrycode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[iso]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[iso]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[iso]"
+                          name="iso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[region]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[region]"
+                          name="region"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[subregion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[subregion]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[subregion]"
+                          name="subregion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[intermediateregion]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregion]"
+                          name="intermediateregion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[regioncode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[regioncode]"
+                          length="255"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[regioncode]"
+                          name="regioncode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregioncode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[intermediateregioncode]"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregioncode]"
+                          name="intermediateregioncode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          dataType="wstr"
+                          length="4000"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[alpha2]"
+                          dataType="wstr"
+                          length="4000"
+                          name="alpha2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[alpha3]"
+                          dataType="wstr"
+                          length="4000"
+                          name="alpha3" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[countrycode]"
+                          dataType="wstr"
+                          length="4000"
+                          name="countrycode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[iso]"
+                          dataType="wstr"
+                          length="4000"
+                          name="iso" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                          dataType="wstr"
+                          length="4000"
+                          name="region" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[subregion]"
+                          dataType="wstr"
+                          length="4000"
+                          name="subregion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[intermediateregion]"
+                          dataType="wstr"
+                          length="4000"
+                          name="intermediateregion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[regioncode]"
+                          dataType="wstr"
+                          length="4000"
+                          name="regioncode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].ExternalColumns[intermediateregioncode]"
+                          dataType="wstr"
+                          length="4000"
+                          name="intermediateregioncode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[name]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[name]"
+                          name="name" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[alpha2]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[alpha2]"
+                          name="alpha2" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[alpha3]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[alpha3]"
+                          name="alpha3" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[countrycode]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[countrycode]"
+                          name="countrycode" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[iso]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[iso]"
+                          name="iso" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[region]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[region]"
+                          name="region" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[subregion]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[subregion]"
+                          name="subregion" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[intermediateregion]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[intermediateregion]"
+                          name="intermediateregion" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[regioncode]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[regioncode]"
+                          name="regioncode" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[intermediateregioncode]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[intermediateregioncode]"
+                          name="intermediateregioncode" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLEDB To Countries_typed"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[Countries_typed]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Connections[OleDbConnection]"
+                      connectionManagerID="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CrimeStatDWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[name]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="name"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[name]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[alpha2]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="alpha2"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[alpha2]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha2]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[alpha3]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="alpha3"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[alpha3]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[alpha3]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[countrycode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="countrycode"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[countrycode]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[countrycode]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[iso]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="iso"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[iso]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[iso]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[region]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="region"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[region]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[subregion]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="subregion"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[subregion]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[subregion]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[intermediateregion]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="intermediateregion"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[intermediateregion]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregion]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[regioncode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="regioncode"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[regioncode]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[regioncode]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].Columns[intermediateregioncode]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="intermediateregioncode"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[intermediateregioncode]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output].Columns[intermediateregioncode]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          dataType="wstr"
+                          length="255"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[alpha2]"
+                          dataType="wstr"
+                          length="255"
+                          name="alpha2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[alpha3]"
+                          dataType="wstr"
+                          length="255"
+                          name="alpha3" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[countrycode]"
+                          dataType="i4"
+                          name="countrycode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[iso]"
+                          dataType="wstr"
+                          length="255"
+                          name="iso" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                          dataType="wstr"
+                          length="255"
+                          name="region" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[subregion]"
+                          dataType="wstr"
+                          length="255"
+                          name="subregion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[intermediateregion]"
+                          dataType="wstr"
+                          length="255"
+                          name="intermediateregion" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[regioncode]"
+                          dataType="wstr"
+                          length="255"
+                          name="regioncode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[subregioncode]"
+                          dataType="wstr"
+                          length="255"
+                          name="subregioncode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input].ExternalColumns[intermediateregioncode]"
+                          dataType="wstr"
+                          length="255"
+                          name="intermediateregioncode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{33edc8fd-afb5-45d7-8586-eef0a777fe0e}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\SQL truncate staging Country_typed"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6314fe86-46fc-446f-b347-e5e32ec9a65d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL truncate staging Country_typed"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B97CDAD0-A9C5-485E-8115-1607144AA7B5}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[Countries_typed]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8fc921c5-6080-4686-9712-001aec8c5bec}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SEQC Load data to staging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="317,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed"
+          TopLeft="14,11" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="374,108"
+          Size="374,151"
+          Id="Package\SEQC Load data to staging"
+          TopLeft="38,241" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Sequence Container\SQL truncate staging Country_typed"
+          TopLeft="49,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="377,122"
+          Size="377,165"
+          Id="Package\Sequence Container"
+          TopLeft="34,48" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="223.75,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed"
+          TopLeft="251,238" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped"
+          TopLeft="243,133" />
+        <EdgeLayout
+          Id="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed.Paths[OLE DB Source Output]"
+          TopLeft="355.5,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB from Countries_untyped">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load data to staging\DFT Load from File to WorldBankPopulation_typed\OLEDB To Countries_typed">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

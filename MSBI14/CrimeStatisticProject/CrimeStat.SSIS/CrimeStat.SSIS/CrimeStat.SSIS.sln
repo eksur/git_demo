@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CrimeStat.SSIS", "CrimeStat.SSIS\CrimeStat.SSIS.dtproj", "{AF7BEF5E-D8F6-4636-AD89-816AB195A8D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7BEF5E-D8F6-4636-AD89-816AB195A8D8}.Development|Default.ActiveCfg = Development
+		{AF7BEF5E-D8F6-4636-AD89-816AB195A8D8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EB0BFE9-533D-489C-BBD8-9A8A1291E46A}
+	EndGlobalSection
+EndGlobal

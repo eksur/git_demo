@@ -1,0 +1,1330 @@
+region_name,sub_region_name,country_name,Year,Count,Rate
+Africa,Eastern Africa,Burundi,2008,24,0.00024
+Africa,Eastern Africa,Burundi,2009,31,0.00031
+Africa,Eastern Africa,Burundi,2010,24,0.00024
+Africa,Eastern Africa,Burundi,2011,49,0.00049
+Africa,Eastern Africa,Burundi,2012,49,0.00049
+Africa,Eastern Africa,Burundi,2013,58,0.00058
+Africa,Eastern Africa,Burundi,2014,79,0.00079
+Africa,Eastern Africa,Kenya,2004,235,0.00235
+Africa,Eastern Africa,Kenya,2005,152,0.00152
+Africa,Eastern Africa,Kenya,2006,220,0.0022
+Africa,Eastern Africa,Kenya,2007,173,0.00173
+Africa,Eastern Africa,Kenya,2008,73,0.00073
+Africa,Eastern Africa,Kenya,2009,95,0.00095
+Africa,Eastern Africa,Kenya,2010,79,0.00079
+Africa,Eastern Africa,Kenya,2011,55,0.00055
+Africa,Eastern Africa,Kenya,2012,75,0.00075
+Africa,Eastern Africa,Kenya,2013,59,0.00059
+Africa,Eastern Africa,Kenya,2014,33,0.00033
+Africa,Eastern Africa,Kenya,2015,110,0.0011
+Africa,Eastern Africa,Madagascar,2010,0,0
+Africa,Eastern Africa,Madagascar,2011,1,0.00001
+Africa,Eastern Africa,Madagascar,2012,1,0.00001
+Africa,Eastern Africa,Madagascar,2013,6,0.00006
+Africa,Eastern Africa,Madagascar,2014,14,0.00014
+Africa,Eastern Africa,Madagascar,2015,11,0.00011
+Africa,Eastern Africa,Mauritius,2009,34,0.00034
+Africa,Eastern Africa,Mauritius,2010,35,0.00035
+Africa,Eastern Africa,Mauritius,2011,50,0.0005
+Africa,Eastern Africa,Rwanda,2008,8,0.00008
+Africa,Eastern Africa,Rwanda,2009,8,0.00008
+Africa,Eastern Africa,Rwanda,2010,12,0.00012
+Africa,Eastern Africa,Rwanda,2011,12,0.00012
+Africa,Eastern Africa,Rwanda,2012,10,0.0001
+Africa,Eastern Africa,Rwanda,2013,21,0.00021
+Africa,Eastern Africa,Uganda,2007,54,0.00054
+Africa,Eastern Africa,Uganda,2008,65,0.00065
+Africa,Eastern Africa,Uganda,2009,202,0.00202
+Africa,Eastern Africa,Uganda,2010,150,0.0015
+Africa,Eastern Africa,Uganda,2011,167,0.00167
+Africa,Eastern Africa,Uganda,2012,132,0.00132
+Africa,Eastern Africa,Uganda,2013,333,0.00333
+Africa,Eastern Africa,Uganda,2014,223,0.00223
+Africa,Eastern Africa,Uganda,2016,938,0.00938
+Africa,Eastern Africa,United Republic of Tanzania,2010,0,0
+Africa,Eastern Africa,United Republic of Tanzania,2011,0,0
+Africa,Eastern Africa,United Republic of Tanzania,2012,0,0
+Africa,Eastern Africa,United Republic of Tanzania,2013,0,0
+Africa,Eastern Africa,United Republic of Tanzania,2014,0,0
+Africa,Eastern Africa,United Republic of Tanzania,2015,0,0
+Africa,Eastern Africa,Zimbabwe,2003,139,0.00139
+Africa,Eastern Africa,Zimbabwe,2004,198,0.00198
+Africa,Eastern Africa,Zimbabwe,2005,43,0.00043
+Africa,Eastern Africa,Zimbabwe,2006,90,0.0009
+Africa,Eastern Africa,Zimbabwe,2007,256,0.00256
+Africa,Eastern Africa,Zimbabwe,2008,222,0.00222
+Africa,Middle Africa,Cameroon,2010,460,0.0046
+Africa,Middle Africa,Cameroon,2011,378,0.00378
+Africa,Middle Africa,Cameroon,2012,532,0.00532
+Africa,Middle Africa,Cameroon,2013,880,0.0088
+Africa,Middle Africa,Cameroon,2014,429,0.00429
+Africa,Middle Africa,Cameroon,2015,985,0.00985
+Africa,Middle Africa,Cameroon,2016,572,0.00572
+Africa,Middle Africa,Cameroon,2017,859,0.00859
+Africa,Middle Africa,Sao Tome and Principe,2007,0,0
+Africa,Middle Africa,Sao Tome and Principe,2008,0,0
+Africa,Middle Africa,Sao Tome and Principe,2009,0,0
+Africa,Middle Africa,Sao Tome and Principe,2010,0,0
+Africa,Middle Africa,Sao Tome and Principe,2011,0,0
+Africa,Northern Africa,Algeria,2003,220,0.0022
+Africa,Northern Africa,Algeria,2004,149,0.00149
+Africa,Northern Africa,Algeria,2005,101,0.00101
+Africa,Northern Africa,Algeria,2006,302,0.00302
+Africa,Northern Africa,Algeria,2007,241,0.00241
+Africa,Northern Africa,Algeria,2008,205,0.00205
+Africa,Northern Africa,Algeria,2009,207,0.00207
+Africa,Northern Africa,Algeria,2010,177,0.00177
+Africa,Northern Africa,Algeria,2011,168,0.00168
+Africa,Northern Africa,Algeria,2012,106,0.00106
+Africa,Northern Africa,Algeria,2013,223,0.00223
+Africa,Northern Africa,Algeria,2014,336,0.00336
+Africa,Northern Africa,Algeria,2015,517,0.00517
+Africa,Northern Africa,Egypt,2003,16,0.00016
+Africa,Northern Africa,Egypt,2004,21,0.00021
+Africa,Northern Africa,Egypt,2005,18,0.00018
+Africa,Northern Africa,Egypt,2006,29,0.00029
+Africa,Northern Africa,Egypt,2007,36,0.00036
+Africa,Northern Africa,Egypt,2008,47,0.00047
+Africa,Northern Africa,Egypt,2009,70,0.0007
+Africa,Northern Africa,Egypt,2010,93,0.00093
+Africa,Northern Africa,Egypt,2011,273,0.00273
+Africa,Northern Africa,Morocco,2003,392,0.00392
+Africa,Northern Africa,Morocco,2004,342,0.00342
+Africa,Northern Africa,Morocco,2005,295,0.00295
+Africa,Northern Africa,Morocco,2006,264,0.00264
+Africa,Northern Africa,Morocco,2007,233,0.00233
+Africa,Northern Africa,Morocco,2008,217,0.00217
+Africa,Northern Africa,Morocco,2009,307,0.00307
+Africa,Northern Africa,Morocco,2012,556,0.00556
+Africa,Northern Africa,Morocco,2013,974,0.00974
+Africa,Northern Africa,Morocco,2015,662,0.00662
+Africa,Northern Africa,Morocco,2016,520,0.0052
+Africa,Northern Africa,Morocco,2017,764,0.00764
+Africa,Northern Africa,Sudan,2008,616,0.00616
+Africa,Southern Africa,Botswana,2009,3,0.00003
+Africa,Southern Africa,Botswana,2010,3,0.00003
+Africa,Southern Africa,Botswana,2011,5,0.00005
+Africa,Southern Africa,Botswana,2014,2,0.00002
+Africa,Southern Africa,Eswatini,2003,122,0.00122
+Africa,Southern Africa,Eswatini,2004,96,0.00096
+Africa,Southern Africa,Lesotho,2007,64,0.00064
+Africa,Southern Africa,Lesotho,2008,40,0.0004
+Africa,Southern Africa,Lesotho,2009,62,0.00062
+Africa,Southern Africa,South Africa,2014,4692,0.04692
+Africa,Southern Africa,South Africa,2015,5013,0.05013
+Africa,Southern Africa,South Africa,2016,4991,0.04991
+Africa,Southern Africa,South Africa,2017,5455,0.05455
+Africa,Western Africa,Benin,2017,530,0.0053
+Africa,Western Africa,Cabo Verde,2010,6,0.00006
+Africa,Western Africa,Cabo Verde,2011,7,0.00007
+Africa,Western Africa,Cabo Verde,2012,22,0.00022
+Africa,Western Africa,Cabo Verde,2013,28,0.00028
+Africa,Western Africa,Cabo Verde,2014,3,0.00003
+Africa,Western Africa,Cabo Verde,2015,5,0.00005
+Africa,Western Africa,Guinea,2003,14,0.00014
+Africa,Western Africa,Guinea,2004,4,0.00004
+Africa,Western Africa,Guinea,2005,16,0.00016
+Africa,Western Africa,Guinea,2006,0,0
+Africa,Western Africa,Guinea,2007,18,0.00018
+Africa,Western Africa,Guinea,2008,25,0.00025
+Africa,Western Africa,Guinea-Bissau,2013,24,0.00024
+Africa,Western Africa,Guinea-Bissau,2014,61,0.00061
+Africa,Western Africa,Guinea-Bissau,2015,7,0.00007
+Africa,Western Africa,Guinea-Bissau,2016,13,0.00013
+Africa,Western Africa,Nigeria,2007,277,0.00277
+Africa,Western Africa,Nigeria,2008,309,0.00309
+Africa,Western Africa,Nigeria,2009,703,0.00703
+Africa,Western Africa,Nigeria,2010,738,0.00738
+Africa,Western Africa,Nigeria,2012,600,0.006
+Africa,Western Africa,Nigeria,2013,574,0.00574
+Africa,Western Africa,Senegal,2015,2,0.00002
+Americas,Caribbean,Bahamas,2005,24,0.00024
+Americas,Caribbean,Bahamas,2006,27,0.00027
+Americas,Caribbean,Bahamas,2007,31,0.00031
+Americas,Caribbean,Bahamas,2008,35,0.00035
+Americas,Caribbean,Bahamas,2009,27,0.00027
+Americas,Caribbean,Bahamas,2010,18,0.00018
+Americas,Caribbean,Bahamas,2011,26,0.00026
+Americas,Caribbean,Bahamas,2012,28,0.00028
+Americas,Caribbean,Bahamas,2014,14,0.00014
+Americas,Caribbean,Bahamas,2015,20,0.0002
+Americas,Caribbean,Bahamas,2016,17,0.00017
+Americas,Caribbean,Bahamas,2017,11,0.00011
+Americas,Caribbean,Barbados,2004,12,0.00012
+Americas,Caribbean,Barbados,2005,23,0.00023
+Americas,Caribbean,Barbados,2006,14,0.00014
+Americas,Caribbean,Barbados,2007,17,0.00017
+Americas,Caribbean,Barbados,2008,12,0.00012
+Americas,Caribbean,Barbados,2009,18,0.00018
+Americas,Caribbean,Barbados,2010,12,0.00012
+Americas,Caribbean,Barbados,2011,13,0.00013
+Americas,Caribbean,Barbados,2012,9,0.00009
+Americas,Caribbean,Barbados,2013,8,0.00008
+Americas,Caribbean,Barbados,2014,3,0.00003
+Americas,Caribbean,Barbados,2015,14,0.00014
+Americas,Caribbean,Barbados,2016,11,0.00011
+Americas,Caribbean,Dominican Republic,2005,20,0.0002
+Americas,Caribbean,Dominican Republic,2006,14,0.00014
+Americas,Caribbean,Dominican Republic,2012,19,0.00019
+Americas,Caribbean,Dominican Republic,2013,30,0.0003
+Americas,Caribbean,Dominican Republic,2014,32,0.00032
+Americas,Caribbean,Dominican Republic,2015,23,0.00023
+Americas,Caribbean,Dominican Republic,2016,21,0.00021
+Americas,Caribbean,Grenada,2005,0,0
+Americas,Caribbean,Grenada,2006,0,0
+Americas,Caribbean,Grenada,2007,0,0
+Americas,Caribbean,Grenada,2008,0,0
+Americas,Caribbean,Grenada,2009,0,0
+Americas,Caribbean,Grenada,2010,0,0
+Americas,Caribbean,Grenada,2011,0,0
+Americas,Caribbean,Grenada,2012,0,0
+Americas,Caribbean,Grenada,2014,0,0
+Americas,Caribbean,Grenada,2015,0,0
+Americas,Caribbean,Grenada,2016,0,0
+Americas,Caribbean,Grenada,2017,0,0
+Americas,Caribbean,Jamaica,2005,31,0.00031
+Americas,Caribbean,Jamaica,2006,38,0.00038
+Americas,Caribbean,Jamaica,2007,38,0.00038
+Americas,Caribbean,Jamaica,2008,43,0.00043
+Americas,Caribbean,Jamaica,2012,11,0.00011
+Americas,Caribbean,Jamaica,2013,21,0.00021
+Americas,Caribbean,Jamaica,2014,27,0.00027
+Americas,Caribbean,Jamaica,2015,14,0.00014
+Americas,Caribbean,Jamaica,2016,11,0.00011
+Americas,Caribbean,Jamaica,2017,12,0.00012
+Americas,Caribbean,Puerto Rico,2016,47,0.00047
+Americas,Caribbean,Puerto Rico,2017,30,0.0003
+Americas,Caribbean,St. Kitts and Nevis,2009,2,0.00002
+Americas,Caribbean,St. Kitts and Nevis,2010,2,0.00002
+Americas,Caribbean,St. Kitts and Nevis,2011,3,0.00003
+Americas,Caribbean,St. Vincent and the Grenadines,2004,3,0.00003
+Americas,Caribbean,St. Vincent and the Grenadines,2005,2,0.00002
+Americas,Caribbean,St. Vincent and the Grenadines,2006,3,0.00003
+Americas,Caribbean,St. Vincent and the Grenadines,2007,8,0.00008
+Americas,Caribbean,St. Vincent and the Grenadines,2008,2,0.00002
+Americas,Caribbean,St. Vincent and the Grenadines,2009,1,0.00001
+Americas,Caribbean,St. Vincent and the Grenadines,2010,2,0.00002
+Americas,Caribbean,St. Vincent and the Grenadines,2011,5,0.00005
+Americas,Caribbean,St. Vincent and the Grenadines,2012,4,0.00004
+Americas,Caribbean,St. Vincent and the Grenadines,2016,9,0.00009
+Americas,Caribbean,Trinidad and Tobago,2004,28,0.00028
+Americas,Caribbean,Trinidad and Tobago,2005,58,0.00058
+Americas,Caribbean,Trinidad and Tobago,2006,17,0.00017
+Americas,Caribbean,Trinidad and Tobago,2007,14,0.00014
+Americas,Caribbean,Trinidad and Tobago,2008,17,0.00017
+Americas,Caribbean,Trinidad and Tobago,2009,8,0.00008
+Americas,Caribbean,Trinidad and Tobago,2010,7,0.00007
+Americas,Caribbean,Trinidad and Tobago,2011,3,0.00003
+Americas,Caribbean,Trinidad and Tobago,2012,3,0.00003
+Americas,Caribbean,Trinidad and Tobago,2013,4,0.00004
+Americas,Caribbean,Trinidad and Tobago,2014,3,0.00003
+Americas,Caribbean,Trinidad and Tobago,2015,4,0.00004
+Americas,Central America,Belize,2005,9,0.00009
+Americas,Central America,Belize,2006,8,0.00008
+Americas,Central America,Belize,2009,2,0.00002
+Americas,Central America,Belize,2011,3,0.00003
+Americas,Central America,Belize,2012,4,0.00004
+Americas,Central America,Belize,2014,4,0.00004
+Americas,Central America,Belize,2015,24,0.00024
+Americas,Central America,Costa Rica,2003,5,0.00005
+Americas,Central America,Costa Rica,2004,8,0.00008
+Americas,Central America,Costa Rica,2005,11,0.00011
+Americas,Central America,Costa Rica,2006,6,0.00006
+Americas,Central America,Costa Rica,2007,8,0.00008
+Americas,Central America,Costa Rica,2008,8,0.00008
+Americas,Central America,Costa Rica,2009,5,0.00005
+Americas,Central America,Costa Rica,2010,11,0.00011
+Americas,Central America,Costa Rica,2011,12,0.00012
+Americas,Central America,Costa Rica,2012,5,0.00005
+Americas,Central America,Costa Rica,2013,4,0.00004
+Americas,Central America,Costa Rica,2014,4,0.00004
+Americas,Central America,Costa Rica,2015,11,0.00011
+Americas,Central America,Costa Rica,2016,17,0.00017
+Americas,Central America,Costa Rica,2017,10,0.0001
+Americas,Central America,El Salvador,2005,4,0.00004
+Americas,Central America,El Salvador,2006,8,0.00008
+Americas,Central America,El Salvador,2007,21,0.00021
+Americas,Central America,El Salvador,2008,10,0.0001
+Americas,Central America,El Salvador,2009,22,0.00022
+Americas,Central America,El Salvador,2010,29,0.00029
+Americas,Central America,El Salvador,2011,15,0.00015
+Americas,Central America,El Salvador,2012,14,0.00014
+Americas,Central America,El Salvador,2013,14,0.00014
+Americas,Central America,El Salvador,2014,17,0.00017
+Americas,Central America,El Salvador,2015,19,0.00019
+Americas,Central America,Guatemala,2004,51,0.00051
+Americas,Central America,Guatemala,2005,52,0.00052
+Americas,Central America,Guatemala,2006,57,0.00057
+Americas,Central America,Guatemala,2007,98,0.00098
+Americas,Central America,Guatemala,2008,213,0.00213
+Americas,Central America,Guatemala,2009,162,0.00162
+Americas,Central America,Guatemala,2010,133,0.00133
+Americas,Central America,Guatemala,2011,124,0.00124
+Americas,Central America,Guatemala,2012,83,0.00083
+Americas,Central America,Guatemala,2013,519,0.00519
+Americas,Central America,Guatemala,2014,450,0.0045
+Americas,Central America,Guatemala,2015,402,0.00402
+Americas,Central America,Honduras,2011,37,0.00037
+Americas,Central America,Honduras,2012,79,0.00079
+Americas,Central America,Honduras,2013,51,0.00051
+Americas,Central America,Honduras,2014,86,0.00086
+Americas,Central America,Honduras,2015,42,0.00042
+Americas,Central America,Honduras,2016,22,0.00022
+Americas,Central America,Honduras,2017,20,0.0002
+Americas,Central America,Mexico,2003,169,0.00169
+Americas,Central America,Mexico,2004,323,0.00323
+Americas,Central America,Mexico,2005,325,0.00325
+Americas,Central America,Mexico,2006,595,0.00595
+Americas,Central America,Mexico,2007,438,0.00438
+Americas,Central America,Mexico,2008,907,0.00907
+Americas,Central America,Mexico,2009,1162,0.01162
+Americas,Central America,Mexico,2010,1284,0.01284
+Americas,Central America,Mexico,2011,1344,0.01344
+Americas,Central America,Mexico,2012,1512,0.01512
+Americas,Central America,Mexico,2013,1888,0.01888
+Americas,Central America,Mexico,2014,1592,0.01592
+Americas,Central America,Mexico,2015,885,0.00885
+Americas,Central America,Mexico,2016,1221,0.01221
+Americas,Central America,Mexico,2017,1219,0.01219
+Americas,Central America,Nicaragua,2005,11,0.00011
+Americas,Central America,Nicaragua,2006,6,0.00006
+Americas,Central America,Nicaragua,2010,7,0.00007
+Americas,Central America,Panama,2004,11,0.00011
+Americas,Central America,Panama,2005,17,0.00017
+Americas,Central America,Panama,2006,13,0.00013
+Americas,Central America,Panama,2007,29,0.00029
+Americas,Central America,Panama,2008,21,0.00021
+Americas,Central America,Panama,2009,28,0.00028
+Americas,Central America,Panama,2010,38,0.00038
+Americas,Central America,Panama,2011,25,0.00025
+Americas,Central America,Panama,2012,17,0.00017
+Americas,Central America,Panama,2013,26,0.00026
+Americas,Central America,Panama,2014,22,0.00022
+Americas,Central America,Panama,2015,14,0.00014
+Americas,Central America,Panama,2016,23,0.00023
+Americas,Central America,Panama,2017,35,0.00035
+Americas,Northern America,Bermuda,2003,3,0.00003
+Americas,Northern America,Bermuda,2004,2,0.00002
+Americas,Northern America,Bermuda,2009,2,0.00002
+Americas,Northern America,Bermuda,2010,1,0.00001
+Americas,Northern America,Bermuda,2011,3,0.00003
+Americas,Northern America,Bermuda,2012,4,0.00004
+Americas,Northern America,Bermuda,2013,4,0.00004
+Americas,Northern America,Bermuda,2014,1,0.00001
+Americas,Northern America,Bermuda,2015,1,0.00001
+Americas,Northern America,Bermuda,2017,0,0
+Americas,Northern America,Canada,2003,3198,0.03198
+Americas,Northern America,Canada,2004,3457,0.03457
+Americas,Northern America,Canada,2005,3896,0.03896
+Americas,Northern America,Canada,2006,4488,0.04488
+Americas,Northern America,Canada,2007,4660,0.0466
+Americas,Northern America,Canada,2008,4732,0.04732
+Americas,Northern America,Canada,2009,4791,0.04791
+Americas,Northern America,Canada,2010,4301,0.04301
+Americas,Northern America,Canada,2011,3780,0.0378
+Americas,Northern America,Canada,2012,3637,0.03637
+Americas,Northern America,Canada,2013,3231,0.03231
+Americas,Northern America,Canada,2014,3290,0.0329
+Americas,Northern America,Canada,2015,3593,0.03593
+Americas,Northern America,Canada,2016,3775,0.03775
+Americas,Northern America,Canada,2017,3778,0.03778
+Americas,South America,Bolivia (Plurinational State of),2005,99,0.00099
+Americas,South America,Bolivia (Plurinational State of),2006,143,0.00143
+Americas,South America,Bolivia (Plurinational State of),2007,160,0.0016
+Americas,South America,Bolivia (Plurinational State of),2008,125,0.00125
+Americas,South America,Bolivia (Plurinational State of),2009,111,0.00111
+Americas,South America,Bolivia (Plurinational State of),2010,91,0.00091
+Americas,South America,Bolivia (Plurinational State of),2011,104,0.00104
+Americas,South America,Bolivia (Plurinational State of),2012,104,0.00104
+Americas,South America,Bolivia (Plurinational State of),2013,116,0.00116
+Americas,South America,Bolivia (Plurinational State of),2014,101,0.00101
+Americas,South America,Bolivia (Plurinational State of),2015,32,0.00032
+Americas,South America,Bolivia (Plurinational State of),2016,48,0.00048
+Americas,South America,Brazil,2006,525,0.00525
+Americas,South America,Brazil,2007,516,0.00516
+Americas,South America,Brazil,2008,290,0.0029
+Americas,South America,Brazil,2009,552,0.00552
+Americas,South America,Brazil,2010,401,0.00401
+Americas,South America,Brazil,2011,319,0.00319
+Americas,South America,Brazil,2012,414,0.00414
+Americas,South America,Brazil,2013,396,0.00396
+Americas,South America,Chile,2003,161,0.00161
+Americas,South America,Chile,2004,114,0.00114
+Americas,South America,Chile,2005,151,0.00151
+Americas,South America,Chile,2006,247,0.00247
+Americas,South America,Chile,2007,254,0.00254
+Americas,South America,Chile,2008,266,0.00266
+Americas,South America,Chile,2009,246,0.00246
+Americas,South America,Chile,2010,259,0.00259
+Americas,South America,Chile,2011,327,0.00327
+Americas,South America,Chile,2012,254,0.00254
+Americas,South America,Chile,2013,274,0.00274
+Americas,South America,Chile,2014,293,0.00293
+Americas,South America,Chile,2015,279,0.00279
+Americas,South America,Chile,2016,338,0.00338
+Americas,South America,Chile,2017,300,0.003
+Americas,South America,Colombia,2004,1442,0.01442
+Americas,South America,Colombia,2005,800,0.008
+Americas,South America,Colombia,2006,687,0.00687
+Americas,South America,Colombia,2007,521,0.00521
+Americas,South America,Colombia,2008,437,0.00437
+Americas,South America,Colombia,2009,213,0.00213
+Americas,South America,Colombia,2010,282,0.00282
+Americas,South America,Colombia,2011,305,0.00305
+Americas,South America,Colombia,2012,305,0.00305
+Americas,South America,Colombia,2013,299,0.00299
+Americas,South America,Colombia,2014,288,0.00288
+Americas,South America,Colombia,2015,213,0.00213
+Americas,South America,Colombia,2016,207,0.00207
+Americas,South America,Colombia,2017,195,0.00195
+Americas,South America,Ecuador,2015,1174,0.01174
+Americas,South America,Ecuador,2016,972,0.00972
+Americas,South America,Ecuador,2017,796,0.00796
+Americas,South America,Guyana,2006,1,0.00001
+Americas,South America,Guyana,2009,2,0.00002
+Americas,South America,Guyana,2010,2,0.00002
+Americas,South America,Guyana,2011,1,0.00001
+Americas,South America,Guyana,2012,0,0
+Americas,South America,Guyana,2013,0,0
+Americas,South America,Guyana,2015,0,0
+Americas,South America,Guyana,2016,0,0
+Americas,South America,Guyana,2017,0,0
+Americas,South America,Paraguay,2005,1,0.00001
+Americas,South America,Paraguay,2006,5,0.00005
+Americas,South America,Paraguay,2008,4,0.00004
+Americas,South America,Paraguay,2009,9,0.00009
+Americas,South America,Paraguay,2010,3,0.00003
+Americas,South America,Paraguay,2011,2,0.00002
+Americas,South America,Paraguay,2012,0,0
+Americas,South America,Paraguay,2013,3,0.00003
+Americas,South America,Paraguay,2014,2,0.00002
+Americas,South America,Paraguay,2015,2,0.00002
+Americas,South America,Paraguay,2016,3,0.00003
+Americas,South America,Paraguay,2017,30,0.0003
+Americas,South America,Peru,2003,275,0.00275
+Americas,South America,Peru,2004,469,0.00469
+Americas,South America,Peru,2005,497,0.00497
+Americas,South America,Peru,2006,611,0.00611
+Americas,South America,Peru,2007,463,0.00463
+Americas,South America,Peru,2008,483,0.00483
+Americas,South America,Peru,2009,822,0.00822
+Americas,South America,Peru,2010,476,0.00476
+Americas,South America,Peru,2011,471,0.00471
+Americas,South America,Peru,2012,446,0.00446
+Americas,South America,Peru,2013,430,0.0043
+Americas,South America,Peru,2014,347,0.00347
+Americas,South America,Peru,2015,205,0.00205
+Americas,South America,Peru,2016,241,0.00241
+Americas,South America,Peru,2017,197,0.00197
+Americas,South America,Uruguay,2003,3,0.00003
+Americas,South America,Uruguay,2012,19,0.00019
+Americas,South America,Uruguay,2013,20,0.0002
+Americas,South America,Uruguay,2015,9,0.00009
+Americas,South America,Uruguay,2016,11,0.00011
+Americas,South America,Uruguay,2017,37,0.00037
+Asia,Central Asia,Kazakhstan,2005,92,0.00092
+Asia,Central Asia,Kazakhstan,2006,84,0.00084
+Asia,Central Asia,Kazakhstan,2007,84,0.00084
+Asia,Central Asia,Kazakhstan,2008,89,0.00089
+Asia,Central Asia,Kazakhstan,2009,120,0.0012
+Asia,Central Asia,Kazakhstan,2010,127,0.00127
+Asia,Central Asia,Kazakhstan,2011,201,0.00201
+Asia,Central Asia,Kazakhstan,2012,81,0.00081
+Asia,Central Asia,Kazakhstan,2013,115,0.00115
+Asia,Central Asia,Kazakhstan,2014,76,0.00076
+Asia,Central Asia,Kazakhstan,2015,79,0.00079
+Asia,Central Asia,Kazakhstan,2017,74,0.00074
+Asia,Central Asia,Kyrgyzstan,2003,17,0.00017
+Asia,Central Asia,Kyrgyzstan,2004,24,0.00024
+Asia,Central Asia,Kyrgyzstan,2005,24,0.00024
+Asia,Central Asia,Kyrgyzstan,2006,13,0.00013
+Asia,Central Asia,Kyrgyzstan,2007,34,0.00034
+Asia,Central Asia,Kyrgyzstan,2008,25,0.00025
+Asia,Central Asia,Kyrgyzstan,2009,6,0.00006
+Asia,Central Asia,Kyrgyzstan,2010,84,0.00084
+Asia,Central Asia,Kyrgyzstan,2011,66,0.00066
+Asia,Central Asia,Kyrgyzstan,2012,60,0.0006
+Asia,Central Asia,Kyrgyzstan,2013,41,0.00041
+Asia,Central Asia,Kyrgyzstan,2014,51,0.00051
+Asia,Central Asia,Kyrgyzstan,2015,54,0.00054
+Asia,Central Asia,Kyrgyzstan,2016,53,0.00053
+Asia,Central Asia,Tajikistan,2006,199,0.00199
+Asia,Central Asia,Tajikistan,2007,181,0.00181
+Asia,Central Asia,Tajikistan,2008,188,0.00188
+Asia,Central Asia,Tajikistan,2009,155,0.00155
+Asia,Central Asia,Tajikistan,2010,146,0.00146
+Asia,Central Asia,Tajikistan,2011,172,0.00172
+Asia,Central Asia,Turkmenistan,2003,157,0.00157
+Asia,Central Asia,Turkmenistan,2004,127,0.00127
+Asia,Central Asia,Uzbekistan,2014,39,0.00039
+Asia,Central Asia,Uzbekistan,2015,37,0.00037
+Asia,Central Asia,Uzbekistan,2016,24,0.00024
+Asia,Central Asia,Uzbekistan,2017,23,0.00023
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2003,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2004,1,0.00001
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2005,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2006,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2007,3,0.00003
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2008,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2009,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2010,1,0.00001
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2011,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2012,0,0
+Asia,Eastern Asia,Hong Kong Special Administrative Region of China,2013,1,0.00001
+Asia,Eastern Asia,Japan,2003,284,0.00284
+Asia,Eastern Asia,Japan,2004,320,0.0032
+Asia,Eastern Asia,Japan,2005,277,0.00277
+Asia,Eastern Asia,Japan,2006,199,0.00199
+Asia,Eastern Asia,Japan,2007,207,0.00207
+Asia,Eastern Asia,Japan,2008,156,0.00156
+Asia,Eastern Asia,Japan,2009,156,0.00156
+Asia,Eastern Asia,Japan,2010,186,0.00186
+Asia,Eastern Asia,Japan,2011,153,0.00153
+Asia,Eastern Asia,Japan,2012,190,0.0019
+Asia,Eastern Asia,Japan,2013,185,0.00185
+Asia,Eastern Asia,Japan,2014,198,0.00198
+Asia,Eastern Asia,Japan,2015,192,0.00192
+Asia,Eastern Asia,Japan,2016,228,0.00228
+Asia,Eastern Asia,Macao Special Administrative Region of China,2008,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2009,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2010,2,0.00002
+Asia,Eastern Asia,Macao Special Administrative Region of China,2011,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2012,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2013,1,0.00001
+Asia,Eastern Asia,Macao Special Administrative Region of China,2014,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2015,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2016,0,0
+Asia,Eastern Asia,Macao Special Administrative Region of China,2017,0,0
+Asia,Eastern Asia,Mongolia,2003,0,0
+Asia,Eastern Asia,Mongolia,2004,0,0
+Asia,Eastern Asia,Mongolia,2005,1,0.00001
+Asia,Eastern Asia,Mongolia,2006,0,0
+Asia,Eastern Asia,Mongolia,2007,1,0.00001
+Asia,Eastern Asia,Mongolia,2008,0,0
+Asia,Eastern Asia,Mongolia,2009,1,0.00001
+Asia,Eastern Asia,Mongolia,2010,0,0
+Asia,Eastern Asia,Mongolia,2011,1,0.00001
+Asia,Eastern Asia,Mongolia,2012,0,0
+Asia,Eastern Asia,Mongolia,2013,2,0.00002
+Asia,Eastern Asia,Mongolia,2014,0,0
+Asia,Eastern Asia,Mongolia,2015,0,0
+Asia,Eastern Asia,Mongolia,2016,3,0.00003
+Asia,Eastern Asia,Republic of Korea,2006,127,0.00127
+Asia,Eastern Asia,Republic of Korea,2007,155,0.00155
+Asia,Eastern Asia,Republic of Korea,2008,259,0.00259
+Asia,Eastern Asia,Republic of Korea,2009,298,0.00298
+Asia,Eastern Asia,Republic of Korea,2010,222,0.00222
+Asia,Eastern Asia,Republic of Korea,2011,256,0.00256
+Asia,Eastern Asia,Republic of Korea,2012,195,0.00195
+Asia,Eastern Asia,Republic of Korea,2013,57,0.00057
+Asia,Eastern Asia,Republic of Korea,2014,77,0.00077
+Asia,Eastern Asia,Republic of Korea,2015,79,0.00079
+Asia,Eastern Asia,Republic of Korea,2016,77,0.00077
+Asia,Eastern Asia,Republic of Korea,2017,57,0.00057
+Asia,South-Eastern Asia,Brunei Darussalam,2003,1,0.00001
+Asia,South-Eastern Asia,Brunei Darussalam,2004,1,0.00001
+Asia,South-Eastern Asia,Brunei Darussalam,2005,0,0
+Asia,South-Eastern Asia,Brunei Darussalam,2006,0,0
+Asia,South-Eastern Asia,Indonesia,2008,621,0.00621
+Asia,South-Eastern Asia,Indonesia,2009,485,0.00485
+Asia,South-Eastern Asia,Indonesia,2010,398,0.00398
+Asia,South-Eastern Asia,Indonesia,2011,454,0.00454
+Asia,South-Eastern Asia,Indonesia,2012,395,0.00395
+Asia,South-Eastern Asia,Indonesia,2013,361,0.00361
+Asia,South-Eastern Asia,Indonesia,2014,336,0.00336
+Asia,South-Eastern Asia,Indonesia,2015,380,0.0038
+Asia,South-Eastern Asia,Indonesia,2016,374,0.00374
+Asia,South-Eastern Asia,Indonesia,2017,241,0.00241
+Asia,South-Eastern Asia,Myanmar,2011,39,0.00039
+Asia,South-Eastern Asia,Myanmar,2012,37,0.00037
+Asia,South-Eastern Asia,Myanmar,2013,2,0.00002
+Asia,South-Eastern Asia,Myanmar,2014,2,0.00002
+Asia,South-Eastern Asia,Myanmar,2015,0,0
+Asia,South-Eastern Asia,Myanmar,2016,3,0.00003
+Asia,South-Eastern Asia,Philippines,2003,90,0.0009
+Asia,South-Eastern Asia,Philippines,2004,42,0.00042
+Asia,South-Eastern Asia,Philippines,2005,44,0.00044
+Asia,South-Eastern Asia,Philippines,2006,28,0.00028
+Asia,South-Eastern Asia,Philippines,2007,35,0.00035
+Asia,South-Eastern Asia,Philippines,2008,46,0.00046
+Asia,South-Eastern Asia,Philippines,2009,35,0.00035
+Asia,South-Eastern Asia,Philippines,2010,21,0.00021
+Asia,South-Eastern Asia,Philippines,2011,11,0.00011
+Asia,South-Eastern Asia,Philippines,2012,29,0.00029
+Asia,South-Eastern Asia,Singapore,2003,3,0.00003
+Asia,South-Eastern Asia,Singapore,2004,0,0
+Asia,South-Eastern Asia,Singapore,2005,0,0
+Asia,South-Eastern Asia,Singapore,2006,1,0.00001
+Asia,South-Eastern Asia,Singapore,2007,0,0
+Asia,South-Eastern Asia,Singapore,2008,0,0
+Asia,South-Eastern Asia,Singapore,2009,0,0
+Asia,South-Eastern Asia,Singapore,2010,0,0
+Asia,South-Eastern Asia,Singapore,2011,0,0
+Asia,South-Eastern Asia,Thailand,2005,12,0.00012
+Asia,South-Eastern Asia,Thailand,2006,11,0.00011
+Asia,South-Eastern Asia,Thailand,2007,21,0.00021
+Asia,South-Eastern Asia,Thailand,2008,16,0.00016
+Asia,South-Eastern Asia,Thailand,2009,5,0.00005
+Asia,South-Eastern Asia,Thailand,2010,8,0.00008
+Asia,South-Eastern Asia,Thailand,2011,9,0.00009
+Asia,South-Eastern Asia,Thailand,2012,9,0.00009
+Asia,South-Eastern Asia,Thailand,2013,12,0.00012
+Asia,South-Eastern Asia,Thailand,2014,19,0.00019
+Asia,South-Eastern Asia,Thailand,2015,304,0.00304
+Asia,South-Eastern Asia,Thailand,2016,1486,0.01486
+Asia,South-Eastern Asia,Timor-Leste,2015,5,0.00005
+Asia,South-Eastern Asia,Timor-Leste,2016,1,0.00001
+Asia,South-Eastern Asia,Timor-Leste,2017,4,0.00004
+Asia,Southern Asia,Bangladesh,2005,1303,0.01303
+Asia,Southern Asia,Bangladesh,2006,1119,0.01119
+Asia,Southern Asia,Bhutan,2009,2,0.00002
+Asia,Southern Asia,Bhutan,2010,1,0.00001
+Asia,Southern Asia,Bhutan,2011,0,0
+Asia,Southern Asia,Bhutan,2012,2,0.00002
+Asia,Southern Asia,Bhutan,2013,1,0.00001
+Asia,Southern Asia,Bhutan,2014,3,0.00003
+Asia,Southern Asia,Bhutan,2015,1,0.00001
+Asia,Southern Asia,Bhutan,2016,1,0.00001
+Asia,Southern Asia,Bhutan,2017,0,0
+Asia,Southern Asia,India,2004,23327,0.23327
+Asia,Southern Asia,India,2005,22832,0.22832
+Asia,Southern Asia,India,2006,23991,0.23991
+Asia,Southern Asia,India,2007,27561,0.27561
+Asia,Southern Asia,India,2008,30261,0.30261
+Asia,Southern Asia,India,2009,33860,0.3386
+Asia,Southern Asia,India,2010,38440,0.3844
+Asia,Southern Asia,India,2011,44664,0.44664
+Asia,Southern Asia,India,2012,47592,0.47592
+Asia,Southern Asia,India,2013,65461,0.65461
+Asia,Southern Asia,Maldives,2004,1,0.00001
+Asia,Southern Asia,Maldives,2007,2,0.00002
+Asia,Southern Asia,Maldives,2008,5,0.00005
+Asia,Southern Asia,Maldives,2009,14,0.00014
+Asia,Southern Asia,Maldives,2010,26,0.00026
+Asia,Southern Asia,Maldives,2011,19,0.00019
+Asia,Southern Asia,Maldives,2012,17,0.00017
+Asia,Southern Asia,Maldives,2013,8,0.00008
+Asia,Southern Asia,Nepal,2005,123,0.00123
+Asia,Southern Asia,Nepal,2006,246,0.00246
+Asia,Southern Asia,Nepal,2016,20,0.0002
+Asia,Southern Asia,Pakistan,2010,18693,0.18693
+Asia,Southern Asia,Pakistan,2011,20029,0.20029
+Asia,Southern Asia,Pakistan,2012,20610,0.2061
+Asia,Southern Asia,Pakistan,2013,19551,0.19551
+Asia,Southern Asia,Pakistan,2014,19111,0.19111
+Asia,Southern Asia,Pakistan,2015,18164,0.18164
+Asia,Southern Asia,Pakistan,2016,18057,0.18057
+Asia,Southern Asia,Pakistan,2017,18363,0.18363
+Asia,Southern Asia,Sri Lanka,2003,829,0.00829
+Asia,Southern Asia,Sri Lanka,2004,868,0.00868
+Asia,Southern Asia,Sri Lanka,2008,526,0.00526
+Asia,Southern Asia,Sri Lanka,2009,358,0.00358
+Asia,Southern Asia,Sri Lanka,2010,202,0.00202
+Asia,Southern Asia,Sri Lanka,2011,180,0.0018
+Asia,Southern Asia,Sri Lanka,2012,222,0.00222
+Asia,Southern Asia,Sri Lanka,2013,195,0.00195
+Asia,Southern Asia,Sri Lanka,2014,323,0.00323
+Asia,Southern Asia,Sri Lanka,2015,246,0.00246
+Asia,Southern Asia,Sri Lanka,2016,297,0.00297
+Asia,Western Asia,Armenia,2004,23,0.00023
+Asia,Western Asia,Armenia,2005,22,0.00022
+Asia,Western Asia,Armenia,2006,26,0.00026
+Asia,Western Asia,Armenia,2007,26,0.00026
+Asia,Western Asia,Armenia,2008,27,0.00027
+Asia,Western Asia,Armenia,2009,34,0.00034
+Asia,Western Asia,Armenia,2010,39,0.00039
+Asia,Western Asia,Armenia,2011,34,0.00034
+Asia,Western Asia,Armenia,2012,38,0.00038
+Asia,Western Asia,Armenia,2013,49,0.00049
+Asia,Western Asia,Armenia,2014,44,0.00044
+Asia,Western Asia,Armenia,2015,58,0.00058
+Asia,Western Asia,Armenia,2016,51,0.00051
+Asia,Western Asia,Armenia,2017,35,0.00035
+Asia,Western Asia,Azerbaijan,2003,28,0.00028
+Asia,Western Asia,Azerbaijan,2004,23,0.00023
+Asia,Western Asia,Azerbaijan,2005,29,0.00029
+Asia,Western Asia,Azerbaijan,2006,21,0.00021
+Asia,Western Asia,Azerbaijan,2007,19,0.00019
+Asia,Western Asia,Azerbaijan,2008,20,0.0002
+Asia,Western Asia,Azerbaijan,2009,9,0.00009
+Asia,Western Asia,Azerbaijan,2010,3,0.00003
+Asia,Western Asia,Azerbaijan,2011,0,0
+Asia,Western Asia,Azerbaijan,2012,1,0.00001
+Asia,Western Asia,Azerbaijan,2013,9,0.00009
+Asia,Western Asia,Azerbaijan,2014,4,0.00004
+Asia,Western Asia,Azerbaijan,2016,6,0.00006
+Asia,Western Asia,Azerbaijan,2017,7,0.00007
+Asia,Western Asia,Bahrain,2003,5,0.00005
+Asia,Western Asia,Bahrain,2004,18,0.00018
+Asia,Western Asia,Bahrain,2005,12,0.00012
+Asia,Western Asia,Bahrain,2006,21,0.00021
+Asia,Western Asia,Bahrain,2007,0,0
+Asia,Western Asia,Cyprus,2003,20,0.0002
+Asia,Western Asia,Cyprus,2004,15,0.00015
+Asia,Western Asia,Cyprus,2005,16,0.00016
+Asia,Western Asia,Cyprus,2006,15,0.00015
+Asia,Western Asia,Cyprus,2007,10,0.0001
+Asia,Western Asia,Cyprus,2008,12,0.00012
+Asia,Western Asia,Cyprus,2009,26,0.00026
+Asia,Western Asia,Cyprus,2010,27,0.00027
+Asia,Western Asia,Cyprus,2011,25,0.00025
+Asia,Western Asia,Cyprus,2012,30,0.0003
+Asia,Western Asia,Cyprus,2013,19,0.00019
+Asia,Western Asia,Cyprus,2014,21,0.00021
+Asia,Western Asia,Cyprus,2015,24,0.00024
+Asia,Western Asia,Cyprus,2016,30,0.0003
+Asia,Western Asia,Cyprus,2017,36,0.00036
+Asia,Western Asia,Georgia,2003,94,0.00094
+Asia,Western Asia,Georgia,2005,88,0.00088
+Asia,Western Asia,Georgia,2006,34,0.00034
+Asia,Western Asia,Georgia,2007,11,0.00011
+Asia,Western Asia,Georgia,2008,5,0.00005
+Asia,Western Asia,Georgia,2009,9,0.00009
+Asia,Western Asia,Georgia,2010,4,0.00004
+Asia,Western Asia,Iraq (Central Iraq),2008,1433,0.01433
+Asia,Western Asia,Iraq (Central Iraq),2009,1657,0.01657
+Asia,Western Asia,Iraq (Central Iraq),2010,1389,0.01389
+Asia,Western Asia,Iraq (Central Iraq),2011,1020,0.0102
+Asia,Western Asia,Iraq (Central Iraq),2012,820,0.0082
+Asia,Western Asia,Iraq (Central Iraq),2013,783,0.00783
+Asia,Western Asia,Iraq (Central Iraq),2014,1119,0.01119
+Asia,Western Asia,Israel,2004,397,0.00397
+Asia,Western Asia,Israel,2005,418,0.00418
+Asia,Western Asia,Israel,2006,383,0.00383
+Asia,Western Asia,Israel,2007,337,0.00337
+Asia,Western Asia,Israel,2008,340,0.0034
+Asia,Western Asia,Israel,2010,267,0.00267
+Asia,Western Asia,Israel,2011,265,0.00265
+Asia,Western Asia,Jordan,2005,28,0.00028
+Asia,Western Asia,Jordan,2006,34,0.00034
+Asia,Western Asia,Kuwait,2004,285,0.00285
+Asia,Western Asia,Kuwait,2005,280,0.0028
+Asia,Western Asia,Kuwait,2006,278,0.00278
+Asia,Western Asia,Kuwait,2007,329,0.00329
+Asia,Western Asia,Kuwait,2008,327,0.00327
+Asia,Western Asia,Kuwait,2009,358,0.00358
+Asia,Western Asia,Lebanon,2008,899,0.00899
+Asia,Western Asia,Lebanon,2009,573,0.00573
+Asia,Western Asia,Lebanon,2010,559,0.00559
+Asia,Western Asia,Lebanon,2011,653,0.00653
+Asia,Western Asia,Lebanon,2012,910,0.0091
+Asia,Western Asia,Lebanon,2013,1214,0.01214
+Asia,Western Asia,Lebanon,2014,1056,0.01056
+Asia,Western Asia,Lebanon,2015,1005,0.01005
+Asia,Western Asia,Oman,2007,13,0.00013
+Asia,Western Asia,Oman,2008,9,0.00009
+Asia,Western Asia,Oman,2014,7,0.00007
+Asia,Western Asia,Oman,2015,6,0.00006
+Asia,Western Asia,Oman,2016,5,0.00005
+Asia,Western Asia,Oman,2017,14,0.00014
+Asia,Western Asia,Qatar,2003,7,0.00007
+Asia,Western Asia,Qatar,2004,6,0.00006
+Asia,Western Asia,Saudi Arabia,2017,590,0.0059
+Asia,Western Asia,State of Palestine,2003,126,0.00126
+Asia,Western Asia,State of Palestine,2004,167,0.00167
+Asia,Western Asia,State of Palestine,2005,202,0.00202
+Asia,Western Asia,State of Palestine,2008,83,0.00083
+Asia,Western Asia,State of Palestine,2009,23,0.00023
+Asia,Western Asia,State of Palestine,2010,21,0.00021
+Asia,Western Asia,State of Palestine,2011,24,0.00024
+Asia,Western Asia,State of Palestine,2012,12,0.00012
+Asia,Western Asia,Syrian Arab Republic,2003,85,0.00085
+Asia,Western Asia,Syrian Arab Republic,2004,135,0.00135
+Asia,Western Asia,Syrian Arab Republic,2005,42,0.00042
+Asia,Western Asia,Syrian Arab Republic,2006,54,0.00054
+Asia,Western Asia,Syrian Arab Republic,2007,15,0.00015
+Asia,Western Asia,Syrian Arab Republic,2008,24,0.00024
+Asia,Western Asia,Turkey,2003,7753,0.07753
+Asia,Western Asia,Turkey,2004,7624,0.07624
+Asia,Western Asia,Turkey,2005,8737,0.08737
+Asia,Western Asia,Turkey,2006,10519,0.10519
+Asia,Western Asia,Turkey,2007,9455,0.09455
+Asia,Western Asia,Turkey,2008,10764,0.10764
+Asia,Western Asia,Turkey,2009,12700,0.127
+Asia,Western Asia,Turkey,2010,13586,0.13586
+Asia,Western Asia,Turkey,2011,13584,0.13584
+Asia,Western Asia,Turkey,2012,13431,0.13431
+Asia,Western Asia,Turkey,2013,31196,0.31196
+Asia,Western Asia,Turkey,2014,32953,0.32953
+Asia,Western Asia,Turkey,2015,31910,0.3191
+Asia,Western Asia,Turkey,2016,26766,0.26766
+Asia,Western Asia,United Arab Emirates,2003,434,0.00434
+Asia,Western Asia,United Arab Emirates,2004,506,0.00506
+Asia,Western Asia,United Arab Emirates,2005,862,0.00862
+Asia,Western Asia,United Arab Emirates,2006,971,0.00971
+Asia,Western Asia,United Arab Emirates,2012,73,0.00073
+Asia,Western Asia,United Arab Emirates,2013,94,0.00094
+Asia,Western Asia,United Arab Emirates,2014,69,0.00069
+Asia,Western Asia,United Arab Emirates,2015,82,0.00082
+Asia,Western Asia,United Arab Emirates,2016,73,0.00073
+Asia,Western Asia,United Arab Emirates,2017,67,0.00067
+Asia,Western Asia,Yemen,2005,102,0.00102
+Asia,Western Asia,Yemen,2006,27,0.00027
+Asia,Western Asia,Yemen,2007,26,0.00026
+Asia,Western Asia,Yemen,2008,48,0.00048
+Asia,Western Asia,Yemen,2009,41,0.00041
+Europe,Eastern Europe,Belarus,2003,30,0.0003
+Europe,Eastern Europe,Belarus,2004,34,0.00034
+Europe,Eastern Europe,Belarus,2005,36,0.00036
+Europe,Eastern Europe,Belarus,2006,23,0.00023
+Europe,Eastern Europe,Belarus,2007,31,0.00031
+Europe,Eastern Europe,Belarus,2008,19,0.00019
+Europe,Eastern Europe,Belarus,2009,16,0.00016
+Europe,Eastern Europe,Belarus,2010,19,0.00019
+Europe,Eastern Europe,Belarus,2011,12,0.00012
+Europe,Eastern Europe,Belarus,2012,6,0.00006
+Europe,Eastern Europe,Belarus,2013,13,0.00013
+Europe,Eastern Europe,Belarus,2014,31,0.00031
+Europe,Eastern Europe,Bulgaria,2003,209,0.00209
+Europe,Eastern Europe,Bulgaria,2004,192,0.00192
+Europe,Eastern Europe,Bulgaria,2005,190,0.0019
+Europe,Eastern Europe,Bulgaria,2006,125,0.00125
+Europe,Eastern Europe,Bulgaria,2007,138,0.00138
+Europe,Eastern Europe,Bulgaria,2008,127,0.00127
+Europe,Eastern Europe,Bulgaria,2009,142,0.00142
+Europe,Eastern Europe,Bulgaria,2010,118,0.00118
+Europe,Eastern Europe,Bulgaria,2011,77,0.00077
+Europe,Eastern Europe,Bulgaria,2012,75,0.00075
+Europe,Eastern Europe,Bulgaria,2013,87,0.00087
+Europe,Eastern Europe,Bulgaria,2014,95,0.00095
+Europe,Eastern Europe,Bulgaria,2015,74,0.00074
+Europe,Eastern Europe,Bulgaria,2016,70,0.0007
+Europe,Eastern Europe,Bulgaria,2017,102,0.00102
+Europe,Eastern Europe,Czech Republic,2003,14,0.00014
+Europe,Eastern Europe,Czech Republic,2004,15,0.00015
+Europe,Eastern Europe,Czech Republic,2005,13,0.00013
+Europe,Eastern Europe,Czech Republic,2006,16,0.00016
+Europe,Eastern Europe,Czech Republic,2007,15,0.00015
+Europe,Eastern Europe,Czech Republic,2008,8,0.00008
+Europe,Eastern Europe,Czech Republic,2009,7,0.00007
+Europe,Eastern Europe,Czech Republic,2010,10,0.0001
+Europe,Eastern Europe,Czech Republic,2011,8,0.00008
+Europe,Eastern Europe,Czech Republic,2012,8,0.00008
+Europe,Eastern Europe,Czech Republic,2013,11,0.00011
+Europe,Eastern Europe,Czech Republic,2014,15,0.00015
+Europe,Eastern Europe,Czech Republic,2015,12,0.00012
+Europe,Eastern Europe,Czech Republic,2016,18,0.00018
+Europe,Eastern Europe,Czech Republic,2017,17,0.00017
+Europe,Eastern Europe,Hungary,2003,36,0.00036
+Europe,Eastern Europe,Hungary,2004,19,0.00019
+Europe,Eastern Europe,Hungary,2005,7,0.00007
+Europe,Eastern Europe,Hungary,2006,13,0.00013
+Europe,Eastern Europe,Hungary,2007,7,0.00007
+Europe,Eastern Europe,Hungary,2008,11,0.00011
+Europe,Eastern Europe,Hungary,2009,14,0.00014
+Europe,Eastern Europe,Hungary,2010,18,0.00018
+Europe,Eastern Europe,Hungary,2011,12,0.00012
+Europe,Eastern Europe,Hungary,2012,9,0.00009
+Europe,Eastern Europe,Hungary,2013,7,0.00007
+Europe,Eastern Europe,Hungary,2014,3,0.00003
+Europe,Eastern Europe,Hungary,2015,11,0.00011
+Europe,Eastern Europe,Hungary,2016,5,0.00005
+Europe,Eastern Europe,Hungary,2017,3,0.00003
+Europe,Eastern Europe,Poland,2003,110,0.0011
+Europe,Eastern Europe,Poland,2004,117,0.00117
+Europe,Eastern Europe,Poland,2005,22,0.00022
+Europe,Eastern Europe,Poland,2006,23,0.00023
+Europe,Eastern Europe,Poland,2007,25,0.00025
+Europe,Eastern Europe,Poland,2008,37,0.00037
+Europe,Eastern Europe,Poland,2009,59,0.00059
+Europe,Eastern Europe,Poland,2010,26,0.00026
+Europe,Eastern Europe,Poland,2011,11,0.00011
+Europe,Eastern Europe,Poland,2012,27,0.00027
+Europe,Eastern Europe,Poland,2013,445,0.00445
+Europe,Eastern Europe,Poland,2014,292,0.00292
+Europe,Eastern Europe,Poland,2015,246,0.00246
+Europe,Eastern Europe,Republic of Moldova,2005,16,0.00016
+Europe,Eastern Europe,Republic of Moldova,2006,18,0.00018
+Europe,Eastern Europe,Republic of Moldova,2007,20,0.0002
+Europe,Eastern Europe,Republic of Moldova,2008,19,0.00019
+Europe,Eastern Europe,Republic of Moldova,2009,16,0.00016
+Europe,Eastern Europe,Republic of Moldova,2010,38,0.00038
+Europe,Eastern Europe,Republic of Moldova,2011,51,0.00051
+Europe,Eastern Europe,Republic of Moldova,2012,92,0.00092
+Europe,Eastern Europe,Republic of Moldova,2013,116,0.00116
+Europe,Eastern Europe,Republic of Moldova,2014,88,0.00088
+Europe,Eastern Europe,Romania,2003,321,0.00321
+Europe,Eastern Europe,Romania,2004,272,0.00272
+Europe,Eastern Europe,Romania,2005,280,0.0028
+Europe,Eastern Europe,Romania,2006,289,0.00289
+Europe,Eastern Europe,Romania,2007,287,0.00287
+Europe,Eastern Europe,Romania,2008,265,0.00265
+Europe,Eastern Europe,Romania,2010,321,0.00321
+Europe,Eastern Europe,Romania,2011,307,0.00307
+Europe,Eastern Europe,Romania,2012,391,0.00391
+Europe,Eastern Europe,Romania,2013,310,0.0031
+Europe,Eastern Europe,Romania,2014,290,0.0029
+Europe,Eastern Europe,Romania,2015,295,0.00295
+Europe,Eastern Europe,Romania,2016,346,0.00346
+Europe,Eastern Europe,Romania,2017,311,0.00311
+Europe,Eastern Europe,Russian Federation,2004,1117,0.01117
+Europe,Eastern Europe,Russian Federation,2005,1135,0.01135
+Europe,Eastern Europe,Russian Federation,2006,994,0.00994
+Europe,Eastern Europe,Russian Federation,2007,837,0.00837
+Europe,Eastern Europe,Russian Federation,2008,698,0.00698
+Europe,Eastern Europe,Russian Federation,2009,633,0.00633
+Europe,Eastern Europe,Russian Federation,2010,519,0.00519
+Europe,Eastern Europe,Russian Federation,2011,520,0.0052
+Europe,Eastern Europe,Russian Federation,2012,512,0.00512
+Europe,Eastern Europe,Russian Federation,2013,442,0.00442
+Europe,Eastern Europe,Russian Federation,2014,325,0.00325
+Europe,Eastern Europe,Russian Federation,2015,344,0.00344
+Europe,Eastern Europe,Russian Federation,2016,292,0.00292
+Europe,Eastern Europe,Russian Federation,2017,320,0.0032
+Europe,Eastern Europe,Slovakia,2005,16,0.00016
+Europe,Eastern Europe,Slovakia,2006,12,0.00012
+Europe,Eastern Europe,Slovakia,2007,4,0.00004
+Europe,Eastern Europe,Slovakia,2008,3,0.00003
+Europe,Eastern Europe,Slovakia,2009,6,0.00006
+Europe,Eastern Europe,Slovakia,2010,4,0.00004
+Europe,Eastern Europe,Slovakia,2011,4,0.00004
+Europe,Eastern Europe,Slovakia,2012,7,0.00007
+Europe,Eastern Europe,Slovakia,2013,78,0.00078
+Europe,Eastern Europe,Slovakia,2014,83,0.00083
+Europe,Eastern Europe,Slovakia,2015,85,0.00085
+Europe,Eastern Europe,Slovakia,2016,102,0.00102
+Europe,Eastern Europe,Slovakia,2017,91,0.00091
+Europe,Eastern Europe,Ukraine,2003,205,0.00205
+Europe,Eastern Europe,Ukraine,2004,172,0.00172
+Europe,Eastern Europe,Ukraine,2005,178,0.00178
+Europe,Eastern Europe,Ukraine,2006,233,0.00233
+Europe,Eastern Europe,Ukraine,2007,256,0.00256
+Europe,Eastern Europe,Ukraine,2008,279,0.00279
+Europe,Eastern Europe,Ukraine,2009,338,0.00338
+Europe,Eastern Europe,Ukraine,2010,292,0.00292
+Europe,Eastern Europe,Ukraine,2017,556,0.00556
+Europe,Northern Europe,Estonia,2003,2,0.00002
+Europe,Northern Europe,Estonia,2004,1,0.00001
+Europe,Northern Europe,Estonia,2005,2,0.00002
+Europe,Northern Europe,Estonia,2006,1,0.00001
+Europe,Northern Europe,Estonia,2007,2,0.00002
+Europe,Northern Europe,Estonia,2008,2,0.00002
+Europe,Northern Europe,Estonia,2009,0,0
+Europe,Northern Europe,Estonia,2010,0,0
+Europe,Northern Europe,Estonia,2011,3,0.00003
+Europe,Northern Europe,Estonia,2012,0,0
+Europe,Northern Europe,Estonia,2013,1,0.00001
+Europe,Northern Europe,Estonia,2014,0,0
+Europe,Northern Europe,Estonia,2015,0,0
+Europe,Northern Europe,Estonia,2017,0,0
+Europe,Northern Europe,Finland,2003,1,0.00001
+Europe,Northern Europe,Finland,2004,2,0.00002
+Europe,Northern Europe,Finland,2005,2,0.00002
+Europe,Northern Europe,Finland,2006,1,0.00001
+Europe,Northern Europe,Finland,2007,1,0.00001
+Europe,Northern Europe,Finland,2008,0,0
+Europe,Northern Europe,Finland,2009,3,0.00003
+Europe,Northern Europe,Finland,2010,1,0.00001
+Europe,Northern Europe,Finland,2011,3,0.00003
+Europe,Northern Europe,Finland,2012,1,0.00001
+Europe,Northern Europe,Finland,2013,1,0.00001
+Europe,Northern Europe,Finland,2014,1,0.00001
+Europe,Northern Europe,Finland,2015,1,0.00001
+Europe,Northern Europe,Finland,2016,3,0.00003
+Europe,Northern Europe,Finland,2017,1,0.00001
+Europe,Northern Europe,Ireland,2003,53,0.00053
+Europe,Northern Europe,Ireland,2004,74,0.00074
+Europe,Northern Europe,Ireland,2005,74,0.00074
+Europe,Northern Europe,Ireland,2006,81,0.00081
+Europe,Northern Europe,Ireland,2007,106,0.00106
+Europe,Northern Europe,Ireland,2008,77,0.00077
+Europe,Northern Europe,Ireland,2009,146,0.00146
+Europe,Northern Europe,Ireland,2010,134,0.00134
+Europe,Northern Europe,Ireland,2011,109,0.00109
+Europe,Northern Europe,Ireland,2012,101,0.00101
+Europe,Northern Europe,Ireland,2013,81,0.00081
+Europe,Northern Europe,Ireland,2014,53,0.00053
+Europe,Northern Europe,Ireland,2015,92,0.00092
+Europe,Northern Europe,Ireland,2016,72,0.00072
+Europe,Northern Europe,Ireland,2017,76,0.00076
+Europe,Northern Europe,Latvia,2003,26,0.00026
+Europe,Northern Europe,Latvia,2004,41,0.00041
+Europe,Northern Europe,Latvia,2005,6,0.00006
+Europe,Northern Europe,Latvia,2006,8,0.00008
+Europe,Northern Europe,Latvia,2007,9,0.00009
+Europe,Northern Europe,Latvia,2008,3,0.00003
+Europe,Northern Europe,Latvia,2009,9,0.00009
+Europe,Northern Europe,Latvia,2010,8,0.00008
+Europe,Northern Europe,Latvia,2011,7,0.00007
+Europe,Northern Europe,Latvia,2012,1,0.00001
+Europe,Northern Europe,Latvia,2013,18,0.00018
+Europe,Northern Europe,Latvia,2014,17,0.00017
+Europe,Northern Europe,Latvia,2015,17,0.00017
+Europe,Northern Europe,Latvia,2016,8,0.00008
+Europe,Northern Europe,Latvia,2017,4,0.00004
+Europe,Northern Europe,Lithuania,2003,37,0.00037
+Europe,Northern Europe,Lithuania,2004,62,0.00062
+Europe,Northern Europe,Lithuania,2005,70,0.0007
+Europe,Northern Europe,Lithuania,2006,60,0.0006
+Europe,Northern Europe,Lithuania,2007,66,0.00066
+Europe,Northern Europe,Lithuania,2008,61,0.00061
+Europe,Northern Europe,Lithuania,2009,59,0.00059
+Europe,Northern Europe,Lithuania,2010,69,0.00069
+Europe,Northern Europe,Lithuania,2011,48,0.00048
+Europe,Northern Europe,Lithuania,2012,65,0.00065
+Europe,Northern Europe,Lithuania,2013,46,0.00046
+Europe,Northern Europe,Lithuania,2014,0,0
+Europe,Northern Europe,Lithuania,2015,0,0
+Europe,Northern Europe,Lithuania,2016,0,0
+Europe,Northern Europe,Lithuania,2017,0,0
+Europe,Northern Europe,United Kingdom (England and Wales),2003,3125,0.03125
+Europe,Northern Europe,United Kingdom (England and Wales),2004,2814,0.02814
+Europe,Northern Europe,United Kingdom (England and Wales),2005,2799,0.02799
+Europe,Northern Europe,United Kingdom (England and Wales),2006,2367,0.02367
+Europe,Northern Europe,United Kingdom (England and Wales),2007,1991,0.01991
+Europe,Northern Europe,United Kingdom (England and Wales),2008,2035,0.02035
+Europe,Northern Europe,United Kingdom (England and Wales),2009,1860,0.0186
+Europe,Northern Europe,United Kingdom (England and Wales),2010,1717,0.01717
+Europe,Northern Europe,United Kingdom (England and Wales),2011,1516,0.01516
+Europe,Northern Europe,United Kingdom (England and Wales),2012,1388,0.01388
+Europe,Northern Europe,United Kingdom (England and Wales),2013,1728,0.01728
+Europe,Northern Europe,United Kingdom (England and Wales),2014,2189,0.02189
+Europe,Northern Europe,United Kingdom (England and Wales),2015,3016,0.03016
+Europe,Northern Europe,United Kingdom (England and Wales),2016,3866,0.03866
+Europe,Northern Europe,United Kingdom (England and Wales),2017,4544,0.04544
+Europe,Northern Europe,United Kingdom (Northern Ireland),2003,71,0.00071
+Europe,Northern Europe,United Kingdom (Northern Ireland),2004,80,0.0008
+Europe,Northern Europe,United Kingdom (Northern Ireland),2005,46,0.00046
+Europe,Northern Europe,United Kingdom (Northern Ireland),2006,53,0.00053
+Europe,Northern Europe,United Kingdom (Northern Ireland),2007,67,0.00067
+Europe,Northern Europe,United Kingdom (Northern Ireland),2008,83,0.00083
+Europe,Northern Europe,United Kingdom (Northern Ireland),2009,82,0.00082
+Europe,Northern Europe,United Kingdom (Northern Ireland),2010,56,0.00056
+Europe,Northern Europe,United Kingdom (Northern Ireland),2011,66,0.00066
+Europe,Northern Europe,United Kingdom (Northern Ireland),2012,45,0.00045
+Europe,Northern Europe,United Kingdom (Northern Ireland),2013,59,0.00059
+Europe,Northern Europe,United Kingdom (Northern Ireland),2014,44,0.00044
+Europe,Northern Europe,United Kingdom (Northern Ireland),2015,65,0.00065
+Europe,Northern Europe,United Kingdom (Northern Ireland),2016,81,0.00081
+Europe,Northern Europe,United Kingdom (Northern Ireland),2017,67,0.00067
+Europe,Northern Europe,United Kingdom (Scotland),2004,353,0.00353
+Europe,Northern Europe,United Kingdom (Scotland),2005,347,0.00347
+Europe,Northern Europe,United Kingdom (Scotland),2006,343,0.00343
+Europe,Northern Europe,United Kingdom (Scotland),2007,284,0.00284
+Europe,Northern Europe,United Kingdom (Scotland),2008,319,0.00319
+Europe,Northern Europe,United Kingdom (Scotland),2009,269,0.00269
+Europe,Northern Europe,United Kingdom (Scotland),2010,260,0.0026
+Europe,Northern Europe,United Kingdom (Scotland),2011,219,0.00219
+Europe,Northern Europe,United Kingdom (Scotland),2012,227,0.00227
+Europe,Northern Europe,United Kingdom (Scotland),2013,253,0.00253
+Europe,Northern Europe,United Kingdom (Scotland),2014,234,0.00234
+Europe,Northern Europe,United Kingdom (Scotland),2015,228,0.00228
+Europe,Northern Europe,United Kingdom (Scotland),2016,230,0.0023
+Europe,Northern Europe,United Kingdom (Scotland),2017,233,0.00233
+Europe,Southern Europe,Albania,2006,13,0.00013
+Europe,Southern Europe,Albania,2007,13,0.00013
+Europe,Southern Europe,Albania,2008,10,0.0001
+Europe,Southern Europe,Albania,2009,5,0.00005
+Europe,Southern Europe,Albania,2010,9,0.00009
+Europe,Southern Europe,Albania,2011,2,0.00002
+Europe,Southern Europe,Albania,2012,2,0.00002
+Europe,Southern Europe,Albania,2013,5,0.00005
+Europe,Southern Europe,Albania,2014,2,0.00002
+Europe,Southern Europe,Albania,2015,8,0.00008
+Europe,Southern Europe,Albania,2016,4,0.00004
+Europe,Southern Europe,Albania,2017,2,0.00002
+Europe,Southern Europe,Andorra,2007,0,0
+Europe,Southern Europe,Andorra,2008,0,0
+Europe,Southern Europe,Andorra,2009,0,0
+Europe,Southern Europe,Andorra,2010,0,0
+Europe,Southern Europe,Andorra,2011,0,0
+Europe,Southern Europe,Andorra,2012,0,0
+Europe,Southern Europe,Andorra,2013,0,0
+Europe,Southern Europe,Andorra,2014,1,0.00001
+Europe,Southern Europe,Andorra,2015,0,0
+Europe,Southern Europe,Bosnia and Herzegovina,2005,7,0.00007
+Europe,Southern Europe,Bosnia and Herzegovina,2006,9,0.00009
+Europe,Southern Europe,Bosnia and Herzegovina,2007,5,0.00005
+Europe,Southern Europe,Bosnia and Herzegovina,2008,8,0.00008
+Europe,Southern Europe,Bosnia and Herzegovina,2009,6,0.00006
+Europe,Southern Europe,Bosnia and Herzegovina,2010,1,0.00001
+Europe,Southern Europe,Bosnia and Herzegovina,2011,1,0.00001
+Europe,Southern Europe,Bosnia and Herzegovina,2012,2,0.00002
+Europe,Southern Europe,Bosnia and Herzegovina,2013,5,0.00005
+Europe,Southern Europe,Bosnia and Herzegovina,2014,3,0.00003
+Europe,Southern Europe,Bosnia and Herzegovina,2015,0,0
+Europe,Southern Europe,Bosnia and Herzegovina,2016,1,0.00001
+Europe,Southern Europe,Bosnia and Herzegovina,2017,0,0
+Europe,Southern Europe,Croatia,2004,14,0.00014
+Europe,Southern Europe,Croatia,2005,20,0.0002
+Europe,Southern Europe,Croatia,2006,7,0.00007
+Europe,Southern Europe,Croatia,2007,14,0.00014
+Europe,Southern Europe,Croatia,2008,16,0.00016
+Europe,Southern Europe,Croatia,2009,12,0.00012
+Europe,Southern Europe,Croatia,2010,13,0.00013
+Europe,Southern Europe,Croatia,2011,6,0.00006
+Europe,Southern Europe,Croatia,2012,6,0.00006
+Europe,Southern Europe,Croatia,2013,1,0.00001
+Europe,Southern Europe,Croatia,2014,1,0.00001
+Europe,Southern Europe,Croatia,2015,0,0
+Europe,Southern Europe,Croatia,2016,1,0.00001
+Europe,Southern Europe,Croatia,2017,0,0
+Europe,Southern Europe,Greece,2004,24,0.00024
+Europe,Southern Europe,Greece,2005,25,0.00025
+Europe,Southern Europe,Greece,2006,28,0.00028
+Europe,Southern Europe,Greece,2007,30,0.0003
+Europe,Southern Europe,Greece,2008,30,0.0003
+Europe,Southern Europe,Greece,2009,16,0.00016
+Europe,Southern Europe,Greece,2010,173,0.00173
+Europe,Southern Europe,Greece,2011,158,0.00158
+Europe,Southern Europe,Greece,2012,139,0.00139
+Europe,Southern Europe,Greece,2013,95,0.00095
+Europe,Southern Europe,Greece,2014,58,0.00058
+Europe,Southern Europe,Greece,2015,89,0.00089
+Europe,Southern Europe,Greece,2016,61,0.00061
+Europe,Southern Europe,Greece,2017,78,0.00078
+Europe,Southern Europe,Holy See,2009,0,0
+Europe,Southern Europe,Holy See,2010,0,0
+Europe,Southern Europe,Holy See,2011,0,0
+Europe,Southern Europe,Holy See,2012,0,0
+Europe,Southern Europe,Holy See,2013,0,0
+Europe,Southern Europe,Holy See,2014,0,0
+Europe,Southern Europe,Holy See,2015,0,0
+Europe,Southern Europe,Italy,2003,132,0.00132
+Europe,Southern Europe,Italy,2004,154,0.00154
+Europe,Southern Europe,Italy,2005,368,0.00368
+Europe,Southern Europe,Italy,2006,278,0.00278
+Europe,Southern Europe,Italy,2007,364,0.00364
+Europe,Southern Europe,Italy,2008,325,0.00325
+Europe,Southern Europe,Italy,2009,349,0.00349
+Europe,Southern Europe,Italy,2010,351,0.00351
+Europe,Southern Europe,Italy,2011,356,0.00356
+Europe,Southern Europe,Italy,2012,341,0.00341
+Europe,Southern Europe,Italy,2013,325,0.00325
+Europe,Southern Europe,Italy,2014,297,0.00297
+Europe,Southern Europe,Italy,2015,287,0.00287
+Europe,Southern Europe,Italy,2016,197,0.00197
+Europe,Southern Europe,Italy,2017,198,0.00198
+Europe,Southern Europe,Kosovo under UNSCR 1244,2008,46,0.00046
+Europe,Southern Europe,Kosovo under UNSCR 1244,2009,50,0.0005
+Europe,Southern Europe,Kosovo under UNSCR 1244,2010,43,0.00043
+Europe,Southern Europe,Kosovo under UNSCR 1244,2011,31,0.00031
+Europe,Southern Europe,Kosovo under UNSCR 1244,2012,33,0.00033
+Europe,Southern Europe,Kosovo under UNSCR 1244,2013,34,0.00034
+Europe,Southern Europe,Kosovo under UNSCR 1244,2014,26,0.00026
+Europe,Southern Europe,Kosovo under UNSCR 1244,2015,24,0.00024
+Europe,Southern Europe,Kosovo under UNSCR 1244,2016,22,0.00022
+Europe,Southern Europe,Kosovo under UNSCR 1244,2017,16,0.00016
+Europe,Southern Europe,Malta,2008,0,0
+Europe,Southern Europe,Malta,2009,0,0
+Europe,Southern Europe,Malta,2010,0,0
+Europe,Southern Europe,Malta,2011,0,0
+Europe,Southern Europe,Malta,2012,0,0
+Europe,Southern Europe,Malta,2013,0,0
+Europe,Southern Europe,Malta,2014,0,0
+Europe,Southern Europe,Malta,2015,0,0
+Europe,Southern Europe,Montenegro,2006,4,0.00004
+Europe,Southern Europe,Montenegro,2007,2,0.00002
+Europe,Southern Europe,Montenegro,2008,3,0.00003
+Europe,Southern Europe,Montenegro,2009,3,0.00003
+Europe,Southern Europe,Montenegro,2010,2,0.00002
+Europe,Southern Europe,Montenegro,2011,3,0.00003
+Europe,Southern Europe,Montenegro,2012,0,0
+Europe,Southern Europe,Montenegro,2013,1,0.00001
+Europe,Southern Europe,Montenegro,2014,0,0
+Europe,Southern Europe,Montenegro,2015,0,0
+Europe,Southern Europe,Montenegro,2016,2,0.00002
+Europe,Southern Europe,Montenegro,2017,0,0
+Europe,Southern Europe,North Macedonia,2005,24,0.00024
+Europe,Southern Europe,North Macedonia,2006,24,0.00024
+Europe,Southern Europe,North Macedonia,2007,30,0.0003
+Europe,Southern Europe,North Macedonia,2008,14,0.00014
+Europe,Southern Europe,North Macedonia,2009,16,0.00016
+Europe,Southern Europe,North Macedonia,2010,17,0.00017
+Europe,Southern Europe,North Macedonia,2011,14,0.00014
+Europe,Southern Europe,North Macedonia,2012,19,0.00019
+Europe,Southern Europe,North Macedonia,2013,18,0.00018
+Europe,Southern Europe,North Macedonia,2014,8,0.00008
+Europe,Southern Europe,North Macedonia,2015,11,0.00011
+Europe,Southern Europe,North Macedonia,2016,10,0.0001
+Europe,Southern Europe,North Macedonia,2017,7,0.00007
+Europe,Southern Europe,Portugal,2004,446,0.00446
+Europe,Southern Europe,Portugal,2005,438,0.00438
+Europe,Southern Europe,Portugal,2006,556,0.00556
+Europe,Southern Europe,Portugal,2007,443,0.00443
+Europe,Southern Europe,Portugal,2008,492,0.00492
+Europe,Southern Europe,Portugal,2009,539,0.00539
+Europe,Southern Europe,Portugal,2010,501,0.00501
+Europe,Southern Europe,Portugal,2011,507,0.00507
+Europe,Southern Europe,Portugal,2012,419,0.00419
+Europe,Southern Europe,Portugal,2013,432,0.00432
+Europe,Southern Europe,Portugal,2014,376,0.00376
+Europe,Southern Europe,Portugal,2015,369,0.00369
+Europe,Southern Europe,Portugal,2016,296,0.00296
+Europe,Southern Europe,Portugal,2017,292,0.00292
+Europe,Southern Europe,Serbia,2005,26,0.00026
+Europe,Southern Europe,Serbia,2006,23,0.00023
+Europe,Southern Europe,Serbia,2007,19,0.00019
+Europe,Southern Europe,Serbia,2008,16,0.00016
+Europe,Southern Europe,Serbia,2009,24,0.00024
+Europe,Southern Europe,Serbia,2010,20,0.0002
+Europe,Southern Europe,Serbia,2011,9,0.00009
+Europe,Southern Europe,Serbia,2012,11,0.00011
+Europe,Southern Europe,Serbia,2013,9,0.00009
+Europe,Southern Europe,Serbia,2014,12,0.00012
+Europe,Southern Europe,Serbia,2015,14,0.00014
+Europe,Southern Europe,Serbia,2016,8,0.00008
+Europe,Southern Europe,Serbia,2017,12,0.00012
+Europe,Southern Europe,Slovenia,2003,8,0.00008
+Europe,Southern Europe,Slovenia,2004,1,0.00001
+Europe,Southern Europe,Slovenia,2005,3,0.00003
+Europe,Southern Europe,Slovenia,2006,6,0.00006
+Europe,Southern Europe,Slovenia,2007,9,0.00009
+Europe,Southern Europe,Slovenia,2008,7,0.00007
+Europe,Southern Europe,Slovenia,2009,2,0.00002
+Europe,Southern Europe,Slovenia,2010,4,0.00004
+Europe,Southern Europe,Slovenia,2011,2,0.00002
+Europe,Southern Europe,Slovenia,2012,4,0.00004
+Europe,Southern Europe,Slovenia,2013,4,0.00004
+Europe,Southern Europe,Slovenia,2014,5,0.00005
+Europe,Southern Europe,Slovenia,2015,3,0.00003
+Europe,Southern Europe,Slovenia,2016,3,0.00003
+Europe,Southern Europe,Slovenia,2017,1,0.00001
+Europe,Southern Europe,Spain,2005,208,0.00208
+Europe,Southern Europe,Spain,2006,223,0.00223
+Europe,Southern Europe,Spain,2007,216,0.00216
+Europe,Southern Europe,Spain,2008,237,0.00237
+Europe,Southern Europe,Spain,2009,171,0.00171
+Europe,Southern Europe,Spain,2010,127,0.00127
+Europe,Southern Europe,Spain,2011,111,0.00111
+Europe,Southern Europe,Spain,2012,118,0.00118
+Europe,Southern Europe,Spain,2013,121,0.00121
+Europe,Southern Europe,Spain,2014,99,0.00099
+Europe,Southern Europe,Spain,2015,93,0.00093
+Europe,Southern Europe,Spain,2016,94,0.00094
+Europe,Southern Europe,Spain,2017,69,0.00069
+Europe,Western Europe,Austria,2004,3,0.00003
+Europe,Western Europe,Austria,2005,5,0.00005
+Europe,Western Europe,Austria,2006,4,0.00004
+Europe,Western Europe,Austria,2007,5,0.00005
+Europe,Western Europe,Austria,2008,11,0.00011
+Europe,Western Europe,Austria,2009,5,0.00005
+Europe,Western Europe,Austria,2010,9,0.00009
+Europe,Western Europe,Austria,2011,5,0.00005
+Europe,Western Europe,Austria,2012,11,0.00011
+Europe,Western Europe,Austria,2013,4,0.00004
+Europe,Western Europe,Austria,2014,1,0.00001
+Europe,Western Europe,Austria,2015,3,0.00003
+Europe,Western Europe,Austria,2016,2,0.00002
+Europe,Western Europe,Belgium,2003,1003,0.01003
+Europe,Western Europe,Belgium,2004,1066,0.01066
+Europe,Western Europe,Belgium,2005,919,0.00919
+Europe,Western Europe,Belgium,2006,915,0.00915
+Europe,Western Europe,Belgium,2007,958,0.00958
+Europe,Western Europe,Belgium,2008,1013,0.01013
+Europe,Western Europe,Belgium,2009,1080,0.0108
+Europe,Western Europe,Belgium,2010,1122,0.01122
+Europe,Western Europe,Belgium,2011,1194,0.01194
+Europe,Western Europe,Belgium,2012,1185,0.01185
+Europe,Western Europe,Belgium,2013,1163,0.01163
+Europe,Western Europe,Belgium,2014,1151,0.01151
+Europe,Western Europe,Belgium,2015,1171,0.01171
+Europe,Western Europe,Belgium,2016,1201,0.01201
+Europe,Western Europe,Belgium,2017,1170,0.0117
+Europe,Western Europe,France,2003,2031,0.02031
+Europe,Western Europe,France,2004,2143,0.02143
+Europe,Western Europe,France,2005,2012,0.02012
+Europe,Western Europe,France,2006,2288,0.02288
+Europe,Western Europe,France,2007,2109,0.02109
+Europe,Western Europe,France,2008,2074,0.02074
+Europe,Western Europe,France,2009,2085,0.02085
+Europe,Western Europe,France,2010,2092,0.02092
+Europe,Western Europe,France,2011,2234,0.02234
+Europe,Western Europe,France,2012,2117,0.02117
+Europe,Western Europe,France,2013,2266,0.02266
+Europe,Western Europe,France,2014,2956,0.02956
+Europe,Western Europe,France,2015,3818,0.03818
+Europe,Western Europe,France,2016,3818,0.03818
+Europe,Western Europe,Germany,2004,1830,0.0183
+Europe,Western Europe,Germany,2005,1727,0.01727
+Europe,Western Europe,Germany,2006,1596,0.01596
+Europe,Western Europe,Germany,2007,1825,0.01825
+Europe,Western Europe,Germany,2008,1857,0.01857
+Europe,Western Europe,Germany,2009,5126,0.05126
+Europe,Western Europe,Germany,2010,4897,0.04897
+Europe,Western Europe,Germany,2011,4922,0.04922
+Europe,Western Europe,Germany,2012,5183,0.05183
+Europe,Western Europe,Germany,2013,4929,0.04929
+Europe,Western Europe,Germany,2014,4988,0.04988
+Europe,Western Europe,Germany,2015,4763,0.04763
+Europe,Western Europe,Germany,2016,4756,0.04756
+Europe,Western Europe,Germany,2017,4625,0.04625
+Europe,Western Europe,Liechtenstein,2005,0,0
+Europe,Western Europe,Liechtenstein,2006,0,0
+Europe,Western Europe,Liechtenstein,2007,0,0
+Europe,Western Europe,Liechtenstein,2008,0,0
+Europe,Western Europe,Liechtenstein,2009,0,0
+Europe,Western Europe,Liechtenstein,2010,0,0
+Europe,Western Europe,Liechtenstein,2011,0,0
+Europe,Western Europe,Liechtenstein,2012,0,0
+Europe,Western Europe,Liechtenstein,2013,0,0
+Europe,Western Europe,Liechtenstein,2014,0,0
+Europe,Western Europe,Liechtenstein,2015,0,0
+Europe,Western Europe,Liechtenstein,2016,0,0
+Europe,Western Europe,Luxembourg,2006,17,0.00017
+Europe,Western Europe,Luxembourg,2007,36,0.00036
+Europe,Western Europe,Luxembourg,2008,33,0.00033
+Europe,Western Europe,Luxembourg,2009,40,0.0004
+Europe,Western Europe,Luxembourg,2010,27,0.00027
+Europe,Western Europe,Luxembourg,2011,47,0.00047
+Europe,Western Europe,Luxembourg,2012,57,0.00057
+Europe,Western Europe,Luxembourg,2013,48,0.00048
+Europe,Western Europe,Luxembourg,2014,52,0.00052
+Europe,Western Europe,Luxembourg,2015,53,0.00053
+Europe,Western Europe,Luxembourg,2016,50,0.0005
+Europe,Western Europe,Luxembourg,2017,46,0.00046
+Europe,Western Europe,Monaco,2005,0,0
+Europe,Western Europe,Monaco,2006,2,0.00002
+Europe,Western Europe,Monaco,2014,0,0
+Europe,Western Europe,Monaco,2015,1,0.00001
+Europe,Western Europe,Monaco,2016,1,0.00001
+Europe,Western Europe,Netherlands,2005,910,0.0091
+Europe,Western Europe,Netherlands,2006,850,0.0085
+Europe,Western Europe,Netherlands,2007,780,0.0078
+Europe,Western Europe,Netherlands,2008,760,0.0076
+Europe,Western Europe,Netherlands,2009,625,0.00625
+Europe,Western Europe,Netherlands,2010,645,0.00645
+Europe,Western Europe,Netherlands,2011,560,0.0056
+Europe,Western Europe,Netherlands,2012,585,0.00585
+Europe,Western Europe,Netherlands,2013,524,0.00524
+Europe,Western Europe,Netherlands,2014,414,0.00414
+Europe,Western Europe,Netherlands,2015,435,0.00435
+Europe,Western Europe,Netherlands,2016,393,0.00393
+Europe,Western Europe,Netherlands,2017,352,0.00352
+Europe,Western Europe,Switzerland,2003,263,0.00263
+Europe,Western Europe,Switzerland,2004,267,0.00267
+Europe,Western Europe,Switzerland,2005,245,0.00245
+Europe,Western Europe,Switzerland,2006,274,0.00274
+Europe,Western Europe,Switzerland,2007,269,0.00269
+Europe,Western Europe,Switzerland,2008,309,0.00309
+Europe,Western Europe,Switzerland,2009,359,0.00359
+Europe,Western Europe,Switzerland,2010,0,0
+Europe,Western Europe,Switzerland,2011,4,0.00004
+Europe,Western Europe,Switzerland,2012,5,0.00005
+Europe,Western Europe,Switzerland,2013,3,0.00003
+Europe,Western Europe,Switzerland,2014,1,0.00001
+Europe,Western Europe,Switzerland,2015,4,0.00004
+Europe,Western Europe,Switzerland,2016,3,0.00003
+Europe,Western Europe,Switzerland,2017,3,0.00003
+Oceania,Australia and New Zealand,Australia,2010,611,0.00611
+Oceania,Australia and New Zealand,Australia,2011,676,0.00676
+Oceania,Australia and New Zealand,Australia,2012,638,0.00638
+Oceania,Australia and New Zealand,Australia,2013,594,0.00594
+Oceania,Australia and New Zealand,Australia,2014,550,0.0055
+Oceania,Australia and New Zealand,Australia,2015,532,0.00532
+Oceania,Australia and New Zealand,Australia,2016,537,0.00537
+Oceania,Australia and New Zealand,Australia,2017,482,0.00482
+Oceania,Australia and New Zealand,New Zealand,2005,289,0.00289
+Oceania,Australia and New Zealand,New Zealand,2006,351,0.00351
+Oceania,Australia and New Zealand,New Zealand,2007,338,0.00338
+Oceania,Australia and New Zealand,New Zealand,2008,342,0.00342
+Oceania,Australia and New Zealand,New Zealand,2009,302,0.00302
+Oceania,Australia and New Zealand,New Zealand,2010,229,0.00229
+Oceania,Australia and New Zealand,New Zealand,2011,278,0.00278
+Oceania,Australia and New Zealand,New Zealand,2012,235,0.00235
+Oceania,Australia and New Zealand,New Zealand,2013,198,0.00198
+Oceania,Australia and New Zealand,New Zealand,2014,235,0.00235
+Oceania,Australia and New Zealand,New Zealand,2015,337,0.00337
+Oceania,Australia and New Zealand,New Zealand,2016,392,0.00392
+Oceania,Australia and New Zealand,New Zealand,2017,377,0.00377
